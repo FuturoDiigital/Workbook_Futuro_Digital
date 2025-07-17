@@ -959,14 +959,77 @@
   }
 }
 
+
+
 @media (max-width: 768px) {
-  nav .nav-menu,
-  .nav-items,
-  .nav-menu .nav-item {
+  .hamburger {
+    display: flex !important;
+  }
+
+  .nav-items {
     display: none !important;
-    visibility: hidden !important;
+  }
+
+  .nav-mobile {
+    display: block !important;
+  }
+
+  .nav-mobile:not(.active) {
+    right: -100% !important;
+  }
+
+  .nav-mobile.active {
+    right: 0 !important;
   }
 }
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+  }
+
+  .nav-items {
+    display: none !important;
+  }
+
+  .nav-mobile {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100%;
+    background-color: black;
+    transition: right 0.3s ease;
+    z-index: 9999;
+    padding: 2rem;
+  }
+
+  .nav-mobile.active {
+    right: 0;
+  }
+
+  #navOverlay {
+    display: none;
+  }
+
+  #navOverlay.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 9998;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
 </style>
 <style>
 @media (max-width: 768px) {
@@ -980,9 +1043,8 @@
 }
 
 .header-responsive {
-  position: relative;
+    position: relative;
 }
-
 @media (max-width: 768px) {
   .logo-futuro {
     position: absolute !important;
@@ -992,7 +1054,6 @@
     z-index: 1000 !important;
   }
 }
-
 @media (max-width: 768px) {
   .mobile-logo-container {
     position: absolute;
@@ -1006,8 +1067,8 @@
     object-fit: contain;
   }
 }
-
-</style><style>
+</style>
+<style>
 @media (max-width: 768px) {
   .logo-futuro {
     position: absolute !important;
@@ -1018,7 +1079,6 @@
     z-index: 1000 !important;
   }
 }
-
 @media (max-width: 768px) {
   .mobile-logo-container {
     position: absolute;
@@ -1032,11 +1092,9 @@
     object-fit: contain;
   }
 }
-
-</style></head>
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> </head>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<!-- HERO SECTION -->
 <div class="hero-section">
 <div class="container">
 <div class="hero-content">
@@ -1044,22 +1102,19 @@
 <div class="warning-box">
 <div class="warning-title">⚠️ ADVERTENCIA IMPORTANTE ⚠️</div>
 <div class="warning-text">
-                        Este NO es un workbook convencional. Es una <strong>HERRAMIENTA DE TRANSFORMACIÓN</strong> diseñada para convertir personas con potencial en <strong>DESARROLLADORES FULLSTACK PROFESIONALES</strong>. Una vez que empiezas este proceso, tu perspectiva sobre tu futuro cambiará para siempre.
-                    </div>
+Este NO es un workbook convencional. Es una <strong>HERRAMIENTA DE TRANSFORMACIÓN</strong> diseñada para convertir personas con potencial en <strong>DESARROLLADORES FULLSTACK PROFESIONALES</strong>. Una vez que empiezas este proceso, tu perspectiva sobre tu futuro cambiará para siempre.
+</div>
 </div>
 <div style="margin-top: 50px;">
 <button class="btn-primary" onclick="scrollToSection('beneficios')">
-                        🚀 COMENZAR MI TRANSFORMACIÓN 🚀
-                    </button>
+🚀 COMENZAR MI TRANSFORMACIÓN 🚀
+</button>
 </div>
 </div>
 </div>
 </div>
-<!-- NAVEGACIÓN STICKY MEJORADA -->
 <nav class="nav-menu" id="navbar">
-<div class="nav-container" style="display: flex; justify-content: center; flex-wrap: wrap;"><a class="nav-logo" href="#inicio" style="display: flex; align-items: center; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"><img alt="Futuro Digital Logo" src="futuro_digital_logo_correcto.png" style="height: 88px; max-height: 90px;"/></a>
-<!-- Menú Desktop -->
-<div class="nav-items">
+<div class="nav-container" style="display: flex; justify-content: center; flex-wrap: wrap;"><a class="nav-logo" href="#inicio" style="display: flex; align-items: center; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"><img alt="Futuro Digital Logo" src="futuro_digital_logo_correcto.png" style="height: 88px; max-height: 90px;"/></a> <div class="nav-items">
 <a class="nav-item" href="#beneficios">🎯 Beneficios</a>
 <a class="nav-item" href="#avatars">🎭 Avatares</a>
 <a class="nav-item" href="#vision">🔮 Visión</a>
@@ -1068,18 +1123,14 @@
 <a class="nav-item" href="#stats">📊 Estadísticas</a>
 <a class="nav-item" href="#descargarPDF">🎯 Actuar</a>
 </div>
-<!-- Botón Hamburguesa MEJORADO -->
 <button aria-label="Menú" class="hamburger" id="hamburger" type="button">
 <span class="hamburger-line"></span>
 <span class="hamburger-line"></span>
 <span class="hamburger-line"></span>
 </button>
 </div>
-<!-- Menú Móvil -->
-<!-- Overlay -->
 <div class="nav-overlay" id="navOverlay"></div>
 </nav>
-<!-- BENEFICIOS -->
 <div class="section section-bg-1" id="beneficios">
 <div class="container">
 <div class="section-header">
@@ -1091,45 +1142,33 @@
 <div class="card-icon">💰</div>
 <div class="card-title">INGRESOS</div>
 <div class="card-description">
-<strong>$15,000 - $50,000 MXN mensuales</strong><br/>
-                        Trabajando desde cualquier lugar
-                    </div>
+<strong>$15,000 - $50,000 MXN mensuales</strong><br/> Trabajando desde cualquier lugar
+</div>
 </div>
 <div class="card">
 <div class="card-icon">🌍</div>
 <div class="card-title">LIBERTAD</div>
 <div class="card-description">
-<strong>Libertad geográfica total</strong><br/>
-                        Trabaja para empresas de todo el mundo
-                    </div>
+<strong>Libertad geográfica total</strong><br/> Trabaja para empresas de todo el mundo
+</div>
 </div>
 <div class="card">
 <div class="card-icon">🧠</div>
 <div class="card-title">HABILIDADES</div>
 <div class="card-description">
-<strong>Habilidades del futuro, pero reales</strong><br/>
-    🧩 Pensamiento lógico-matemático<br/>
-    🫱🏽‍🫲🏿 Habilidades sociales y de comunicación<br/>
-    🎤 Seguridad al hablar en público<br/>
-    💬 Manejo de tecnicismos del mundo tech<br/>
-    Aprende a resolver problemas reales con lógica, creatividad y claridad.
-  </div>
+<strong>Habilidades del futuro, pero reales</strong><br/> 🧩 Pensamiento lógico-matemático<br/> 🫱🏽‍🫲🏿 Habilidades sociales y de comunicación<br/> 🎤 Seguridad al hablar en público<br/> 💬 Manejo de tecnicismos del mundo tech<br/> Aprende a resolver problemas reales con lógica, creatividad y claridad.
+</div>
 </div>
 <div class="card">
 <div class="card-icon">🏆</div>
 <div class="card-title">RECONOCIMIENTO</div>
 <div class="card-description">
-<strong>Sé leyenda en tu círculo</strong><br/>
-    🎓 El primero en tu familia en programar<br/>
-    💖 El que puede crear una web para su emprendimiento<br/>
-    🎁 El que programa algo especial para su pareja o amigos<br/>
-    Lo que sabes hacer empieza a hablar por ti.
-  </div>
+<strong>Sé leyenda en tu círculo</strong><br/> 🎓 El primero en tu familia en programar<br/> 💖 El que puede crear una web para su emprendimiento<br/> 🎁 El que programa algo especial para su pareja o amigos<br/> Lo que sabes hacer empieza a hablar por ti.
 </div>
 </div>
 </div>
 </div>
-<!-- AVATARES -->
+</div>
 <div class="section section-bg-2" id="avatars">
 <div class="container">
 <div class="section-header">
@@ -1170,596 +1209,400 @@
 <div class="avatar-card">
 <span class="avatar-emoji">👑</span>
 <h3 class="avatar-name">JAVIER "EL ESTRATEGA"</h3>
-<p class="avatar-title">35 años • Profesional Experimentado</p>
+<p class="avatar-title">35 años • Quiere Liderar Proyectos</p>
 <ul class="avatar-stats">
-<li><strong>Fortaleza:</strong> Disciplina y experiencia laboral</li>
-<li><strong>Objetivo:</strong> Cambio de carrera antes de los 40</li>
-<li><strong>Desafío:</strong> Resistencia al cambio</li>
-<li><strong>Motivación:</strong> "Es mi momento decisivo"</li>
+<li><strong>Fortaleza:</strong> Visión y planificación</li>
+<li><strong>Objetivo:</strong> Liderar equipos y proyectos tecnológicos</li>
+<li><strong>Desafío:</strong> Necesita actualizar sus habilidades técnicas</li>
+<li><strong>Motivación:</strong> "Voy a dominar este nuevo campo"</li>
 </ul>
 <div class="checkbox-container">
 <input class="custom-checkbox" id="javier" type="checkbox"/>
 <label for="javier" style="color: #ffc107; font-weight: 600;">Soy Javier</label>
 </div>
 </div>
-<div class="avatar-card">
-<span class="avatar-emoji">🎨</span>
-<h3 class="avatar-name">PAOLA "LA VISIONARIA"</h3>
-<p class="avatar-title">22 años • Perfil Creativo-Digital</p>
-<ul class="avatar-stats">
-<li><strong>Fortaleza:</strong> Creatividad digital natural</li>
-<li><strong>Objetivo:</strong> Crear su propio camino profesional</li>
-<li><strong>Desafío:</strong> Presión por opciones tradicionales</li>
-<li><strong>Motivación:</strong> "Voy a innovar mi futuro"</li>
-</ul>
-<div class="checkbox-container">
-<input class="custom-checkbox" id="paola" type="checkbox"/>
-<label for="paola" style="color: #ffc107; font-weight: 600;">Soy Paola</label>
 </div>
 </div>
 </div>
-<div class="form-group">
-<label class="form-label">🏆 MI AVATAR ELEGIDO:</label>
-<input class="form-input" placeholder="Escribe aquí el nombre de tu avatar digital..." type="text"/>
-</div>
-</div>
-</div>
-<!-- VISIÓN DEL FUTURO -->
 <div class="section section-bg-3" id="vision">
 <div class="container">
 <div class="section-header">
-<h2 class="section-title">🔮 MÁQUINA DEL TIEMPO ACTIVADA</h2>
-<p class="section-subtitle">Destino: 15 de Enero de 2026 • Tu nueva realidad como FullStack Developer</p>
-</div>
-<div class="special-section">
-<h3 class="special-title">⏰ HAS VIAJADO 12 MESES AL FUTURO ⏰</h3>
-<div class="form-group">
-<label class="form-label">🌅 ¿Dónde despiertas en tu nueva vida?</label>
-<textarea class="form-input form-textarea" placeholder="Describe tu nuevo hogar, tu habitación, la vista desde tu ventana..."></textarea>
+<h2 class="section-title">🔮 TU VISIÓN, TU CÓDIGO</h2>
+<p class="section-subtitle">Define tu camino y el impacto que quieres generar.</p>
 </div>
 <div class="form-group">
-<label class="form-label">☕ ¿Cuál es tu nueva rutina matutina de libertad?</label>
-<textarea class="form-input form-textarea" placeholder="Ya no tienes jefe ni horarios... ¿Cómo empiezas tu día?"></textarea>
+<label class="form-label" for="visionPersonal">¿Cuál es tu visión personal a 5 años relacionada con la tecnología?</label>
+<textarea class="form-input form-textarea" id="visionPersonal" placeholder="Quiero crear una aplicación que..."></textarea>
 </div>
 <div class="form-group">
-<label class="form-label">💻 ¿En qué proyecto épico estás trabajando?</label>
-<textarea class="form-input form-textarea" placeholder="¿Qué aplicación, web o sistema estás desarrollando?"></textarea>
+<label class="form-label" for="impactoDeseado">¿Qué tipo de impacto te gustaría generar en el mundo con tus habilidades?</label>
+<textarea class="form-input form-textarea" id="impactoDeseado" placeholder="Me gustaría contribuir a..."></textarea>
 </div>
 <div class="form-group">
-<label class="form-label">💰 Tu salario mensual como FullStack Developer:</label>
-<input class="form-input" placeholder="$_____ MXN mensuales" style="font-size: 1.2em; text-align: center; font-weight: bold;" type="text"/>
-</div>
-<div class="form-group">
-<label class="form-label">👨‍👩‍👧‍👦 ¿Cómo reacciona tu familia a tu transformación?</label>
-<textarea class="form-input form-textarea" placeholder="¿Qué te dicen? ¿Cómo te ven ahora?"></textarea>
-</div>
-<div class="form-group">
-<label class="form-label">🎁 ¿Qué fue lo primero que compraste con tu nuevo salario?</label>
-<textarea class="form-input form-textarea" placeholder="Esa compra especial que simboliza tu nueva vida..."></textarea>
+<label class="form-label" for="metasTecnologicas">Menciona 3 metas tecnológicas específicas que te gustaría alcanzar.</label>
+<textarea class="form-input form-textarea" id="metasTecnologicas" placeholder="1. Dominar React.js 2. Desarrollar un sistema de IA 3. Crear mi propia startup tech"></textarea>
 </div>
 </div>
 </div>
-</div>
-<!-- DIAGNÓSTICO BRUTAL -->
 <div class="section section-bg-1" id="diagnostico">
 <div class="container">
 <div class="section-header">
-<h2 class="section-title">💀 DIAGNÓSTICO BRUTAL</h2>
-<p class="section-subtitle">La cruda realidad de tu situación actual (sin filtros)</p>
-</div>
-<div class="special-section">
-<div style="background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%); color: #000; padding: 20px; border-radius: 15px; text-align: center; font-weight: 700; margin-bottom: 40px;">
-                    ⚠️ ZONA DE HONESTIDAD BRUTAL - Es hora de ser 100% real contigo mismo
-                </div>
-<div class="two-column">
-<div class="form-group">
-<label class="form-label">💼 ¿En qué trabajas actualmente?</label>
-<input class="form-input" placeholder="Mi trabajo actual es..." type="text"/>
+<h2 class="section-title">💀 DIAGNÓSTICO CRÍTICO</h2>
+<p class="section-subtitle">Sé honesto contigo mismo, es el primer paso para el cambio.</p>
 </div>
 <div class="form-group">
-<label class="form-label">💸 ¿Cuánto ganas al mes? (sin mentiras)</label>
-<input class="form-input" placeholder="$_____ MXN" type="text"/>
-</div>
-</div>
-<div class="two-column">
-<div class="form-group">
-<label class="form-label">📚 Del 1 al 10, ¿cuánto sabes de programación?</label>
-<input class="form-input" max="10" min="1" placeholder="___/10" type="number"/>
+<label class="form-label" for="miedosLimitaciones">¿Cuáles son tus mayores miedos o limitaciones actuales respecto a aprender a programar o entrar al mundo tech?</label>
+<textarea class="form-input form-textarea" id="miedosLimitaciones" placeholder="Miedo a no ser lo suficientemente inteligente, no tener tiempo..."></textarea>
 </div>
 <div class="form-group">
-<label class="form-label">⏰ ¿Cuántas horas REALES tienes libres al día?</label>
-<input class="form-input" placeholder="___ horas" type="text"/>
-</div>
-</div>
-<div class="form-group">
-<label class="form-label">🏠 ¿Cuál es tu situación de vivienda actual?</label>
-<input class="form-input" placeholder="Vivo en... (con padres, solo, pareja, etc.)" type="text"/>
-</div>
-<div style="background: rgba(255, 193, 7, 0.05); border-radius: 20px; padding: 40px; margin: 40px 0; border: 1px solid rgba(255, 193, 7, 0.2);">
-<h4 style="color: #ffc107; margin-bottom: 30px; text-align: center; font-size: 1.3em;">💔 ANÁLISIS PROFUNDO (La honestidad es clave para el cambio)</h4>
-<div class="form-group">
-<label class="form-label">😤 ¿Qué es lo que MÁS te frustra de tu vida actual?</label>
-<textarea class="form-input form-textarea" placeholder="Sé brutalmente honesto... ¿Qué te tiene harto?"></textarea>
+<label class="form-label" for="tiempoDedicacion">¿Cuánto tiempo real puedes y estás dispuesto a dedicar a aprender y practicar programación diariamente?</label>
+<input class="form-input" id="tiempoDedicacion" placeholder="Ej: 2 horas al día" type="text"/>
 </div>
 <div class="form-group">
-<label class="form-label">😱 ¿Cuál es tu PEOR pesadilla sobre tu futuro?</label>
-<textarea class="form-input form-textarea" placeholder="Si nada cambia... ¿Qué es lo peor que podría pasar?"></textarea>
+<label class="form-label" for="recursosDisponibles">¿Qué recursos (financieros, tiempo, equipo) tienes disponibles para tu transformación?</label>
+<textarea class="form-input form-textarea" id="recursosDisponibles" placeholder="Ej: Tengo $X para invertir, mi laptop es..., dispongo de Y horas..."></textarea>
 </div>
 <div class="form-group">
-<label class="form-label">💀 Si en 2 años sigues exactamente igual... ¿Cómo te sentirías?</label>
-<textarea class="form-input form-textarea" placeholder="Imagina que absolutamente nada cambia en tu vida..."></textarea>
+<label class="form-label" for="fracasosPrevios">Describe cualquier intento previo de aprender programación y por qué crees que no funcionó.</label>
+<textarea class="form-input form-textarea" id="fracasosPrevios" placeholder="Intenté cursos online, pero me aburrí; no entendía los conceptos; me sentía solo..."></textarea>
 </div>
 <div class="form-group">
-<label class="form-label">🔥 ¿Qué te haría sentir VERDADERAMENTE orgulloso de ti mismo?</label>
-<textarea class="form-input form-textarea" placeholder="Tu mayor aspiración... ¿Qué te llenaría de orgullo?"></textarea>
+<label class="form-label" for="compromisoNivel">En una escala del 1 al 10, ¿qué tan comprometido estás con esta transformación?</label>
+<input class="form-input" id="compromisoNivel" max="10" min="1" type="number"/>
 </div>
 </div>
 </div>
-</div>
-</div>
-<!-- ESTADÍSTICAS -->
-<div class="section section-bg-2" id="stats">
+<div class="section section-bg-2" id="sesiones">
 <div class="container">
 <div class="section-header">
-<h2 class="section-title">📊 ESTADÍSTICAS QUE IMPACTAN</h2>
-<p class="section-subtitle">Los números no mienten: Esta es tu oportunidad dorada</p>
+<h2 class="section-title">⚡ LAS SESIONES DE PODER</h2>
+<p class="section-subtitle">Así transformaremos tu potencial en habilidades imparables.</p>
+</div>
+<div class="session-container">
+<div class="session-number">01</div>
+<h3 class="session-title">MENTALIDAD DE CRECIMIENTO</h3>
+<p class="session-subtitle">Rompe barreras, instala una mentalidad imparable.</p>
+<ul class="avatar-stats">
+<li>Desbloquea tu potencial.</li>
+<li>Supera el miedo al fracaso.</li>
+<li>Cultiva la disciplina.</li>
+</ul>
+</div>
+<div class="session-container">
+<div class="session-number">02</div>
+<h3 class="session-title">FUNDAMENTOS DE PROGRAMACIÓN</h3>
+<p class="session-subtitle">Las bases sólidas para construir tu imperio digital.</p>
+<ul class="avatar-stats">
+<li>Lógica algorítmica.</li>
+<li>Variables, funciones, estructuras de control.</li>
+<li>Introducción a Python/JavaScript.</li>
+</ul>
+</div>
+<div class="session-container">
+<div class="session-number">03</div>
+<h3 class="session-title">DESARROLLO FRONT-END ÉPICO</h3>
+<p class="session-subtitle">Crea interfaces que enamoren y funcionen perfecto.</p>
+<ul class="avatar-stats">
+<li>HTML Semántico y Accesible.</li>
+<li>CSS Avanzado (Flexbox, Grid, Responsive Design).</li>
+<li>JavaScript para la interactividad.</li>
+<li>Frameworks: React/Vue/Angular (introducción).</li>
+</ul>
+</div>
+<div class="session-container">
+<div class="session-number">04</div>
+<h3 class="session-title">DESARROLLO BACK-END PODEROSO</h3>
+<p class="session-subtitle">El cerebro detrás de cada aplicación robusta.</p>
+<ul class="avatar-stats">
+<li>Node.js y Express.</li>
+<li>Bases de Datos: SQL (PostgreSQL) y NoSQL (MongoDB).</li>
+<li>APIs RESTful.</li>
+<li>Autenticación y Seguridad.</li>
+</ul>
+</div>
+<div class="session-container">
+<div class="session-number">05</div>
+<h3 class="session-title">DEVOPS Y DESPLIEGUE CONTINUO</h3>
+<p class="session-subtitle">Lleva tus proyectos del código a la nube.</p>
+<ul class="avatar-stats">
+<li>Git y GitHub para control de versiones.</li>
+<li>Despliegue con Netlify/Vercel (Front-end).</li>
+<li>Despliegue con Heroku/AWS (Back-end).</li>
+<li>Contenedores con Docker (introducción).</li>
+</ul>
+</div>
+<div class="session-container">
+<div class="session-number">06</div>
+<h3 class="session-title">PROYECTOS DEL MUNDO REAL</h3>
+<p class="session-subtitle">Construye tu portafolio, demuestra tu talento.</p>
+<ul class="avatar-stats">
+<li>Aplicación de lista de tareas (CRUD).</li>
+<li>Clon de red social o e-commerce.</li>
+<li>Proyecto final personalizado.</li>
+</ul>
+</div>
+<div class="session-container">
+<div class="session-number">07</div>
+<h3 class="session-title">ESTRATEGIA PARA EMPLEO Y FREELANCE</h3>
+<p class="session-subtitle">Consigue el trabajo de tus sueños o tus primeros clientes.</p>
+<ul class="avatar-stats">
+<li>Optimización de CV y LinkedIn.</li>
+<li>Entrevistas técnicas y de comportamiento.</li>
+<li>Cómo conseguir clientes freelance.</li>
+<li>Negociación de salarios.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section section-bg-3" id="stats">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">📊 TU CRECIMIENTO EN NÚMEROS</h2>
+<p class="section-subtitle">Registra tu progreso y celebra cada victoria.</p>
 </div>
 <div class="stats-container">
 <div class="stat-card">
-<div class="stat-number">95%</div>
-<div class="stat-label">EMPLEABILIDAD</div>
-<div class="stat-description">De nuestros egresados consiguen trabajo como FullStack</div>
+<div class="stat-number">
+<input class="form-input" id="horasCodigo" placeholder="0" type="number"/>
+</div>
+<div class="stat-label">Horas de Código</div>
+<div class="stat-description">Total de horas dedicadas a programar.</div>
 </div>
 <div class="stat-card">
-<div class="stat-number">$25K</div>
-<div class="stat-label">SALARIO PROMEDIO</div>
-<div class="stat-description">MXN mensuales de nuestros desarrolladores</div>
+<div class="stat-number">
+<input class="form-input" id="proyectosCompletados" placeholder="0" type="number"/>
+</div>
+<div class="stat-label">Proyectos Completados</div>
+<div class="stat-description">Número de proyectos funcionales terminados.</div>
 </div>
 <div class="stat-card">
-<div class="stat-number">6</div>
-<div class="stat-label">MESES PROMEDIO</div>
-<div class="stat-description">Para conseguir su primer empleo tech</div>
+<div class="stat-number">
+<input class="form-input" id="problemasResueltos" placeholder="0" type="number"/>
+</div>
+<div class="stat-label">Problemas Resueltos</div>
+<div class="stat-description">Desafíos de lógica o algoritmos superados.</div>
 </div>
 <div class="stat-card">
-<div class="stat-number">∞</div>
-<div class="stat-label">POTENCIAL</div>
-<div class="stat-description">Las oportunidades en tech no tienen límite</div>
+<div class="stat-number">
+<input class="form-input" id="conexionesHechas" placeholder="0" type="number"/>
 </div>
-</div>
-<!-- Testimonios -->
-<div style="margin-top: 80px;">
-<h3 style="text-align: center; color: #ffc107; font-size: 2rem; margin-bottom: 50px; font-family: 'JetBrains Mono', monospace;">🏆 HISTORIAS DE TRANSFORMACIÓN REAL</h3>
-<div class="testimonial-container">
-<div class="testimonial-text">
-                        "Nunca imaginé que yo, sin experiencia alguna en programación, pudiera crear algo desde cero. Estudié Administración de empresas de entretenimiento y comunicación, y buscaba solo complementar mi formación... pero en Futuro Digital encontré mucho más. Hoy tengo mi propia página web para mi emprendimiento. Aprendí, me sentí acompañada, y lo logré. No sabes lo que significa para mí poder decir eso con orgullo."
-                    </div>
-<div class="testimonial-author">— Abigail Salinas Peña</div>
-<div class="testimonial-role">Estudiante de Administración de Empresas de Entretenimiento y Comunicación</div>
-</div>
-<div class="testimonial-container">
-<div class="testimonial-text">
-                        "Después de salir de la universidad, pasé meses sin encontrar trabajo. Sentía que lo que había estudiado no era suficiente, y que nadie me estaba esperando allá afuera. Futuro Digital cambió todo eso. Me dieron estructura, práctica, guía y comunidad. Hoy trabajo en tecnología, con personas que conocí en el curso y que ahora son parte de mi equipo. Encontré un lugar donde me sentí visto y preparado para avanzar."
-                    </div>
-<div class="testimonial-author">— Jorge Armando Muñoz de la Cruz</div>
-<div class="testimonial-role">Especialista en Desarrollo Backend</div>
-</div>
-<div class="testimonial-container">
-<div class="testimonial-text">
-                        "A los 24 años estaba perdido sin dirección clara. Futuro Digital no solo me enseñó programación, me dio una profesión con futuro. Ahora trabajo como freelancer para clientes internacionales y tengo la libertad que siempre busqué. Fue la mejor inversión de mi vida."
-                    </div>
-<div class="testimonial-author">— Jesús Abraham Ramírez Rodríguez</div>
-<div class="testimonial-role">Frontend Developer &amp; Freelancer</div>
+<div class="stat-label">Conexiones Hechas</div>
+<div class="stat-description">Contactos relevantes en la industria tech.</div>
 </div>
 </div>
 </div>
 </div>
-<!-- LAS 3 SESIONES -->
-<div class="section section-bg-3" id="sesiones">
+<div class="section section-bg-1">
 <div class="container">
 <div class="section-header">
-<h2 class="section-title">⚡ LAS 3 SESIONES LEGENDARIAS</h2>
-<p class="section-subtitle">Tu journey de transformación comienza aquí</p>
+<h2 class="section-title">COMPARA TU ANTES Y DESPUÉS</h2>
+<p class="section-subtitle">¿Qué ha cambiado después de tu transformación?</p>
 </div>
-<!-- SESIÓN 1: DESTINO -->
-<div class="session-container">
-<div class="session-number">1</div>
-<h3 class="session-title">SESIÓN DESTINO</h3>
-<p class="session-subtitle">"¿Qué vas a lograr? El poder de la visión clara"</p>
-<div class="form-group">
-<label class="form-label">📝 Notas de la Sesión Destino:</label>
-<textarea class="form-input form-textarea" placeholder="Escribe aquí los insights más poderosos que recibiste..." style="min-height: 120px;"></textarea>
-</div>
-<div class="two-column">
-<div class="form-group">
-<label class="form-label">💡 El insight que te voló la mente:</label>
-<textarea class="form-input form-textarea" placeholder="¿Qué descubrimiento cambió tu perspectiva?"></textarea>
-</div>
-<div class="form-group">
-<label class="form-label">🔥 Lo que más te emocionó:</label>
-<textarea class="form-input form-textarea" placeholder="¿Qué te llenó de energía y esperanza?"></textarea>
-</div>
-</div>
-<div style="background: rgba(255, 193, 7, 0.08); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid rgba(255, 193, 7, 0.3);">
-<h4 style="color: #ffc107; text-align: center; margin-bottom: 25px; font-size: 1.4em; font-family: 'JetBrains Mono', monospace;">🎯 RITUAL DE COMPROMISO</h4>
-<p style="color: #cccccc; margin-bottom: 30px; font-style: italic; text-align: center;">"Los verdaderos guerreros digitales hacen juramentos sagrados..."</p>
-<div class="form-group">
-<label class="form-label">Mi nombre completo:</label>
-<input class="form-input" placeholder="Escribe tu nombre completo aquí" type="text"/>
-</div>
-<p style="color: #ffffff; margin: 30px 0; text-align: center; font-size: 1.1em;">Juro convertirme en desarrollador FullStack porque:</p>
-<div class="form-group">
-<label class="form-label">1. Mi razón más poderosa:</label>
-<input class="form-input" placeholder="La razón que te mueve más profundamente..." type="text"/>
-</div>
-<div class="form-group">
-<label class="form-label">2. Mi segunda razón:</label>
-<input class="form-input" placeholder="Otra razón fundamental..." type="text"/>
-</div>
-<div class="form-group">
-<label class="form-label">3. Mi tercera razón:</label>
-<input class="form-input" placeholder="Una razón más que te impulsa..." type="text"/>
-</div>
-<div class="two-column" style="margin-top: 30px;">
-<div class="form-group">
-<label class="form-label">📅 Fecha de mi compromiso:</label>
-<input class="form-input" type="date"/>
-</div>
-<div class="form-group">
-<label class="form-label">✍️ Tu firma digital:</label>
-<input class="form-input" placeholder="Firma aquí tu compromiso" type="text"/>
-</div>
-</div>
-</div>
-</div>
-<!-- SESIÓN 2: MAPA -->
-<div class="session-container">
-<div class="session-number">2</div>
-<h3 class="session-title">SESIÓN MAPA</h3>
-<p class="session-subtitle">"¿Cómo lo vas a lograr? La estrategia maestra revelada"</p>
-<div class="form-group">
-<label class="form-label">📝 Notas de la Sesión Mapa:</label>
-<textarea class="form-input form-textarea" placeholder="Anota aquí toda la metodología y estrategias que aprendiste..." style="min-height: 120px;"></textarea>
-</div>
-<div style="background: rgba(255, 193, 7, 0.08); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid rgba(255, 193, 7, 0.3);">
-<h4 style="color: #ffc107; margin-bottom: 25px; font-family: 'JetBrains Mono', monospace;">🛤️ LOS 3 PASOS MAESTROS DEL ÉXITO:</h4>
-<div class="form-group">
-<label class="form-label">1. Primer paso fundamental:</label>
-<input class="form-input" placeholder="El primer paso de tu journey..." type="text"/>
-</div>
-<div class="form-group">
-<label class="form-label">2. Segundo paso clave:</label>
-<input class="form-input" placeholder="El segundo paso crítico..." type="text"/>
-</div>
-<div class="form-group">
-<label class="form-label">3. Tercer paso definitivo:</label>
-<input class="form-input" placeholder="El paso que te lleva al éxito..." type="text"/>
-</div>
-</div>
-<div class="two-column">
-<div class="form-group">
-<label class="form-label">🤯 Lo que te sorprendió de la metodología:</label>
-<textarea class="form-input form-textarea" placeholder="¿Qué no esperabas escuchar?"></textarea>
-</div>
-<div class="form-group">
-<label class="form-label">💪 Por qué ahora tienes más confianza:</label>
-<textarea class="form-input form-textarea" placeholder="¿Qué te tranquilizó y motivó?"></textarea>
-</div>
-</div>
-<!-- Tabla de Comparación -->
 <div class="comparison-table">
-<div class="table-header">
-                        ⚔️ BATTLE ROYALE: Futuro Digital vs La Competencia
-                    </div>
 <table>
 <thead>
 <tr>
-<th>CRITERIO</th>
-<th>FUTURO DIGITAL</th>
-<th>OTROS</th>
+<th>Aspecto</th>
+<th>Antes de Futuro Digital</th>
+<th>Después de Futuro Digital</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="color: #cccccc; font-weight: 600;">Acompañamiento Real</td>
-<td><input placeholder="Escribe aquí..." type="text"/></td>
-<td><input placeholder="Escribe aquí..." type="text"/></td>
+<td>Nivel de Habilidad (1-10)</td>
+<td><input class="form-input" placeholder="Ej: 3" type="number"/></td>
+<td><input class="form-input" placeholder="Ej: 8" type="number"/></td>
 </tr>
 <tr>
-<td style="color: #cccccc; font-weight: 600;">Garantía de Empleo</td>
-<td><input placeholder="Escribe aquí..." type="text"/></td>
-<td><input placeholder="Escribe aquí..." type="text"/></td>
+<td>Confianza en ti mismo (1-10)</td>
+<td><input class="form-input" placeholder="Ej: 4" type="number"/></td>
+<td><input class="form-input" placeholder="Ej: 9" type="number"/></td>
 </tr>
 <tr>
-<td style="color: #cccccc; font-weight: 600;">Valor/Precio</td>
-<td><input placeholder="Escribe aquí..." type="text"/></td>
-<td><input placeholder="Escribe aquí..." type="text"/></td>
+<td>Ingresos Mensuales Esperados</td>
+<td><input class="form-input" placeholder="Ej: $0" type="text"/></td>
+<td><input class="form-input" placeholder="Ej: $25,000 MXN" type="text"/></td>
+</tr>
+<tr>
+<td>Red de Contactos (1-10)</td>
+<td><input class="form-input" placeholder="Ej: 2" type="number"/></td>
+<td><input class="form-input" placeholder="Ej: 7" type="number"/></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<!-- SESIÓN 3: VEHÍCULO -->
-<div class="session-container">
-<div class="session-number">3</div>
-<h3 class="session-title">SESIÓN VEHÍCULO</h3>
-<p class="session-subtitle">"Tu arma secreta: El programa que lo cambia todo"</p>
-<div class="form-group">
-<label class="form-label">📝 Notas de la Sesión Vehículo:</label>
-<textarea class="form-input form-textarea" placeholder="Todo lo que aprendiste sobre el programa FullStack..." style="min-height: 120px;"></textarea>
 </div>
-<!-- Calculadora de ROI -->
-<div style="background: rgba(255, 193, 7, 0.1); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid #ffc107;">
-<h4 style="color: #ffc107; text-align: center; margin-bottom: 30px; font-size: 1.4em; font-family: 'JetBrains Mono', monospace;">💰 CALCULADORA DE TRANSFORMACIÓN</h4>
-<div class="two-column">
-<div class="form-group">
-<label class="form-label">🏦 Mi inversión en el programa:</label>
-<input class="form-input" placeholder="$_____ MXN" style="font-size: 1.2em; text-align: center;" type="text"/>
-</div>
-<div class="form-group">
-<label class="form-label">📈 Mis ingresos proyectados año 1:</label>
-<input class="form-input" placeholder="$_____ MXN" style="font-size: 1.2em; text-align: center;" type="text"/>
-</div>
-</div>
-<div class="two-column">
-<div class="form-group">
-<label class="form-label">🚀 Mi multiplicador de dinero:</label>
-<input class="form-input" placeholder="____x" style="text-align: center;" type="text"/>
-</div>
-<div class="form-group">
-<label class="form-label">⚡ Meses para recuperar inversión:</label>
-<input class="form-input" placeholder="__ meses" style="text-align: center;" type="text"/>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- CÓDIGO ESPECIAL -->
-<div class="section section-bg-1">
+<div class="section section-bg-2">
 <div class="container">
-<div style="background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%); border-radius: 30px; padding: 60px; text-align: center; margin: 60px 0; border: 4px solid #ffab00; box-shadow: 0 0 50px rgba(255, 193, 7, 0.4); position: relative; overflow: hidden;">
-<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.1); z-index: 1;"></div>
-<div style="position: relative; z-index: 10;">
-<h2 style="color: #000; font-family: 'JetBrains Mono', monospace; font-size: 2.2rem; margin-bottom: 30px; font-weight: 800;">🎯 CÓDIGO DE ACCESO ESPECIAL</h2>
-<div style="background: rgba(0, 0, 0, 0.8); border-radius: 20px; padding: 40px; margin: 40px 0;">
-<h3 style="color: #ffc107; font-size: 1.6rem; margin-bottom: 25px; font-family: 'JetBrains Mono', monospace;">¡ENHORABUENA! 🎉</h3>
-<p style="color: #ffffff; font-size: 1.2rem; margin-bottom: 30px;">
-                            Has completado el workbook de transformación digital, es tu hora de inscribirte.
-                        </p>
-<h4 style="color: #ffc107; font-size: 1.3rem; margin-bottom: 25px; font-family: 'JetBrains Mono', monospace;">🎁 TUS BENEFICIOS AL INSCRIBIRTE:</h4>
-<div style="text-align: left; max-width: 600px; margin: 0 auto; color: #ffffff; font-size: 1.1rem; line-height: 1.8;">
-<p style="margin: 10px 0;">● ✅ <strong style="color: #ffc107;">ACCESO PRIORITARIO</strong> al programa FullStack</p>
-<p style="margin: 10px 0;">● ✅ <strong style="color: #ffc107;">CONTENIDO EXCLUSIVO</strong> de preparación</p>
-<p style="margin: 10px 0;">● ✅ <strong style="color: #ffc107;">CONTARÁS CON TALLERES DE INGLÉS</strong> impartidas por nativos</p>
-<p style="margin: 10px 0;">● ✅ <strong style="color: #ffc107;">COMUNIDAD VIP</strong> de futuros desarrolladores</p>
-<p style="margin: 10px 0;">● ✅ <strong style="color: #ffc107;">BONUS EXCLUSIVOS REVELADOS EN LA SESIÓN 3</strong></p>
+<div class="section-header">
+<h2 class="section-title">🗣️ TESTIMONIOS</h2>
+<p class="section-subtitle">Historias de éxito que inspiran.</p>
 </div>
+<div class="testimonial-container">
+<div class="testimonial-text">
+"Antes de Futuro Digital, me sentía estancado. Ahora, no solo tengo un trabajo bien remunerado, sino que amo lo que hago. ¡Mi vida cambió por completo!"
 </div>
-<div style="background: linear-gradient(135deg, #ff1744 0%, #ff6b35 100%); border-radius: 20px; padding: 30px; margin: 30px 0; border: 2px solid #ffffff;"><h4 style="color: #fff; margin-bottom: 20px; font-size: 1.3rem; font-family: 'JetBrains Mono', monospace;">📱 ENVÍA TU WORKBOOK A:</h4><p style="color: #ffff00; font-weight: 700; font-size: 1.5rem; text-align: center;">+52 1 55 2563 0618</p></div>
-<div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 25px; margin: 25px 0;">
-<p style="color: #ff1744; font-weight: 700; font-size: 1.3rem; font-family: 'JetBrains Mono', monospace;">
-                            ⚠️ CUPO LIMITADO ⚠️<br/>
-<span style="font-size: 1rem; font-family: 'Inter', sans-serif;">Si no actúas pronto, tu lugar puede ir a lista de espera</span>
-</p>
+<div class="testimonial-author">Andrea P.</div>
+<div class="testimonial-role">Desarrolladora Front-end</div>
+</div>
+<div class="testimonial-container">
+<div class="testimonial-text">
+"La metodología es única. Aprendí a pensar como un programador y a resolver problemas reales. ¡Superó mis expectativas!"
+</div>
+<div class="testimonial-author">Carlos M.</div>
+<div class="testimonial-role">Desarrollador Fullstack</div>
 </div>
 </div>
 </div>
+<div class="final-cta section-bg-3" id="cta-final">
+<div class="final-cta-content">
+<h2 class="final-title">¡TU TRANSFORMACIÓN EMPIEZA HOY!</h2>
+<p class="final-subtitle">Descarga tu workbook, actúa y empieza a construir tu Futuro Digital Épico.</p>
+<button class="btn-primary" id="descargarPDF">📥 Descargar PDF</button>
 </div>
 </div>
-<div style="margin-top: 60px;">
-</div>
-<div style="margin-top: 60px; font-size: 1.3rem; line-height: 1.8;">
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><section id="descarga-final" style="text-align: center; padding: 2rem;">
-<h2 style="font-size: 1.8rem; color: #111;">📥 Tu misión inmediata</h2>
-<p style="font-size: 1.1rem;">
-    Haz clic en el botón para descargar tu workbook con tus respuestas.<br/>
-    Luego, <strong style="color:#ffcc00;">envíalo por WhatsApp al +52 1 55 2563 0618</strong> para finalizar tu registro. 💬
-  </p>
-</section><script>
-function generarYDescargarPDF() {
-  const { jsPDF } = window.jspdf;
-  const motivo = document.getElementById("motivo")?.value || "(Sin respuesta)";
-  const meta = document.getElementById("meta")?.value || "(Sin respuesta)";
-  const doc = new jsPDF();
-  doc.setFontSize(16);
-  doc.text("<img src="https://futurodigitall.github.io/WorkbookFuturoDigital/futuro_digital_logo_correcto.png" style="height: 80px;" alt="Futuro Digital" style="height: 60px;"> - MI WORKBOOK", 20, 20);
-  doc.setFontSize(12);
-  doc.text("¿Por qué quiero entrar?:", 20, 40);
-  doc.text(motivo, 20, 50, { maxWidth: 170 });
-  doc.text("¿Cuál es mi meta?:", 20, 80);
-  doc.text(meta, 20, 90, { maxWidth: 170 });
-  doc.setFontSize(11);
-  doc.text("📲 Enviar este PDF por WhatsApp al +52 1 55 2563 0618", 20, 120);
-  doc.save("Mi_Workbook_Futuro_Digital.pdf");
-}
-</script>
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Guardar y cargar datos de LocalStorage
-    const inputs = document.querySelectorAll("input, textarea");
-
-    inputs.forEach(input => {
-        const key = input.placeholder || input.name || input.id;
-        if (!key) return;
-
-        // Cargar dato si existe
-        const storedValue = localStorage.getItem(key);
-        if (storedValue) input.value = storedValue;
-
-        // Guardar al escribir
-        input.addEventListener("input", () => {
-            localStorage.setItem(key, input.value);
+    document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    if (document.getElementById('navMobile').classList.contains('active')) {
+                        document.getElementById('navMobile').classList.remove('active');
+                        document.getElementById('navOverlay').classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                    }
+                }
+            });
         });
-    });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const inputs = document.querySelectorAll("input, textarea");
-    const saveNotification = document.createElement("div");
 
-    saveNotification.style.position = "fixed";
-    saveNotification.style.bottom = "20px";
-    saveNotification.style.right = "20px";
-    saveNotification.style.padding = "10px 20px";
-    saveNotification.style.background = "#ffc107";
-    saveNotification.style.color = "#000";
-    saveNotification.style.fontWeight = "700";
-    saveNotification.style.borderRadius = "10px";
-    saveNotification.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)";
-    saveNotification.style.display = "none";
-    saveNotification.innerText = "¡Tus respuestas se han guardado!";
-    document.body.appendChild(saveNotification);
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMobile = document.querySelector('.nav-mobile');
+        const navOverlay = document.getElementById('navOverlay');
+        const body = document.body;
 
-    function showSaveNotification() {
-        saveNotification.style.display = "block";
-        setTimeout(() => {
-            saveNotification.style.display = "none";
-        }, 1500);
-    }
+        if (hamburger && navMobile && navOverlay) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMobile.classList.toggle('active');
+                navOverlay.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
 
-    inputs.forEach(input => {
-        const key = input.placeholder || input.name || input.id;
-        if (!key) return;
+            navOverlay.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMobile.classList.remove('active');
+                navOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        }
 
-        // Cargar dato si existe
-        const storedValue = localStorage.getItem(key);
-        if (storedValue) input.value = storedValue;
+        // Save form input data to localStorage
+        const inputs = document.querySelectorAll("input, textarea");
+        const saveNotification = document.createElement("div");
 
-        // Guardar al escribir
-        input.addEventListener("input", () => {
-            localStorage.setItem(key, input.value);
-            showSaveNotification();
+        saveNotification.style.position = "fixed";
+        saveNotification.style.bottom = "20px";
+        saveNotification.style.right = "20px";
+        saveNotification.style.padding = "10px 20px";
+        saveNotification.style.background = "#ffc107";
+        saveNotification.style.color = "#000";
+        saveNotification.style.fontWeight = "700";
+        saveNotification.style.borderRadius = "10px";
+        saveNotification.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)";
+        saveNotification.style.display = "none";
+        saveNotification.innerText = "¡Tus respuestas se han guardado!";
+        document.body.appendChild(saveNotification);
+
+        function showSaveNotification() {
+            saveNotification.style.display = "block";
+            setTimeout(() => {
+                saveNotification.style.display = "none";
+            }, 1500);
+        }
+
+        inputs.forEach(input => {
+            const key = input.placeholder || input.name || input.id;
+            if (!key) return;
+
+            // Load data if exists
+            const storedValue = localStorage.getItem(key);
+            if (storedValue) input.value = storedValue;
+
+            // Save on input
+            input.addEventListener("input", () => {
+                localStorage.setItem(key, input.value);
+                showSaveNotification();
+            });
         });
+
+        // Specific function to scroll to section, used by the hero button
+        window.scrollToSection = function(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+
+        // PDF Download functionality - NEW CODE ADDED HERE
+        const descargarPDFButton = document.getElementById('descargarPDF');
+        if (descargarPDFButton) {
+            descargarPDFButton.addEventListener('click', async () => {
+                const { jsPDF } = window.jspdf;
+                const body = document.querySelector('body');
+
+                // Temporarily hide elements that should not be in the PDF
+                const elementsToHide = document.querySelectorAll('.nav-menu, .btn-primary[onclick="scrollToSection(\'beneficios\')"], .save-notification'); // Add more selectors if needed
+                elementsToHide.forEach(el => el.style.display = 'none');
+
+                // Capture the entire body content
+                const canvas = await html2canvas(body, {
+                    scale: 2, // Higher scale for better resolution
+                    useCORS: true, // Needed if you have images from other domains
+                    windowWidth: document.body.scrollWidth,
+                    windowHeight: document.body.scrollHeight,
+                    scrollY: -window.scrollY // Capture from the top of the page
+                });
+
+                // Restore hidden elements
+                elementsToHide.forEach(el => el.style.display = '');
+
+                const imgData = canvas.toDataURL('image/jpeg', 1.0);
+                const pdf = new jsPDF('p', 'mm', 'a4');
+
+                const imgProps = pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+                let position = 0;
+                const pageHeight = pdf.internal.pageSize.getHeight();
+
+                if (pdfHeight <= pageHeight) {
+                    pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+                } else {
+                    while (position < pdfHeight) {
+                        pdf.addImage(imgData, 'JPEG', 0, -(position), pdfWidth, pdfHeight);
+                        position += pageHeight;
+                        if (position < pdfHeight) {
+                            pdf.addPage();
+                        }
+                    }
+                }
+
+                pdf.save('FuturoDigital_Workbook.pdf');
+            });
+        }
     });
-});
 </script>
-<section style="text-align: center; padding: 3rem;">
-<h2 style="font-size: 1.6rem; color: #ffc107; margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace;">
-    📥 Descarga tu Workbook con tus respuestas
-  </h2>
-<p style="color: #ccc; margin-bottom: 1.5rem;">Puedes enviarlo por WhatsApp o guardarlo como recuerdo de tu transformación.</p>
-</section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script>
-window.jsPDF = window.jspdf.jsPDF;
-
-function generarPDF() {
-    const doc = new jsPDF("p", "pt", "a4");
-    const margin = 40;
-    let y = margin;
-
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(20);
-    doc.setTextColor("#ffb300");
-    doc.text("📘 Workbook Futuro Digital", margin, y);
-    y += 30;
-
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(12);
-    doc.setTextColor("#111");
-
-    const inputs = document.querySelectorAll("input, textarea");
-    inputs.forEach((el, index) => {
-        let label = el.closest(".form-group")?.querySelector(".form-label")?.innerText || `Campo ${index + 1}`;
-        let value = el.value || "";
-
-        // Cortar texto largo
-        if (value.length > 300) value = value.slice(0, 297) + "...";
-
-        doc.setFont("helvetica", "bold");
-        doc.text(`🔹 ${label}`, margin, y);
-        y += 16;
-
-        doc.setFont("helvetica", "normal");
-        let lines = doc.splitTextToSize(value, 500);
-        doc.text(lines, margin, y);
-        y += lines.length * 14 + 10;
-
-        // Nueva página si rebasa
-        if (y > 750) {
-            doc.addPage();
-            y = margin;
-        }
-    });
-
-    doc.save("Workbook_Futuro_Digital.pdf");
-}
-</script>
-<div style="text-align: center; margin-top: 60px; margin-bottom: 60px;"><p style="margin-top: 20px; color: #cccccc; font-size: 1rem;">
-                        Se descargará un PDF con todas tus respuestas para enviar por WhatsApp
-                    </p><p style="font-family: 'JetBrains Mono', monospace;"><strong>"En Futuro Digital no solo enseñamos programación..."</strong></p><p style="font-size: 1.8rem; color: #ffc107; font-weight: 700; margin: 25px 0; font-family: 'JetBrains Mono', monospace;">
-                        "¡TRANSFORMAMOS PROFESIONALES!"
-                    </p><p style="margin-top: 30px; font-style: italic;">
-                        Tu futuro coach te está esperando 💻✨
-                    </p><p style="margin-top: 25px; font-size: 1.4rem; font-family: 'JetBrains Mono', monospace; color: #ffc107;">
-                        ¡Tu transformación digital comienza HOY! 🚀
-                    </p></div><button id="descargarPDF" style="background:#ffd000; color:black; padding: 15px 25px; font-size: 18px; border:none; border-radius:10px; cursor:pointer; margin: 50px auto; display:block;">📥 Descargar PDF</button><script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script>
-document.getElementById("descargarPDF").addEventListener("click", async () => {
-    const content = document.querySelector("body");
-    const canvas = await html2canvas(content, {
-        scale: 2,
-        useCORS: true,
-        windowWidth: document.body.scrollWidth,
-        windowHeight: document.body.scrollHeight,
-        scrollY: -window.scrollY
-    });
-
-    const imgData = canvas.toDataURL("image/jpeg", 1.0);
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF("p", "mm", "a4");
-
-    const imgProps = pdf.getImageProperties(imgData);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-    let position = 0;
-    let pageHeight = pdf.internal.pageSize.getHeight();
-
-    if (pdfHeight <= pageHeight) {
-        pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
-    } else {
-        while (position < pdfHeight) {
-            pdf.addImage(imgData, "JPEG", 0, -position, pdfWidth, pdfHeight);
-            position += pageHeight;
-            if (position < pdfHeight) pdf.addPage();
-        }
-    }
-
-    pdf.save("Workbook_Futuro_Digital_COMPLETO.pdf");
-});
-</script><div class="nav-mobile" id="navMobile"><div class="nav-mobile-items"><a class="nav-item" href="#beneficios">🎯 Beneficios</a><a class="nav-item" href="#avatars">🎭 Avatares</a><a class="nav-item" href="#vision">🔮 Visión</a><a class="nav-item" href="#diagnostico">💀 Diagnóstico</a><a class="nav-item" href="#sesiones">⚡ Sesiones</a><a class="nav-item" href="#stats">📊 Estadísticas</a><a class="nav-item" href="#descargarPDF">🎯 Actuar</a></div></div><script>
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.getElementById("hamburger");
-  const navMobile = document.getElementById("navMobile");
-  const navOverlay = document.getElementById("navOverlay");
-
-  hamburger?.addEventListener("click", () => {
-    navMobile.classList.toggle("active");
-    navOverlay.classList.toggle("active");
-  });
-
-  navOverlay?.addEventListener("click", () => {
-    navMobile.classList.remove("active");
-    navOverlay.classList.remove("active");
-  });
-
-  document.querySelectorAll(".nav-mobile .nav-item").forEach(link => {
-    link.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-      if (href && href.startsWith("#")) {
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          navMobile.classList.remove("active");
-          navOverlay.classList.remove("active");
-          const y = target.offsetTop - 60;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      }
-    });
-  });
-});
-</script></body>
+</body>
 </html>
