@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
-<title>FUTURO DIGITAL - Tu Transformation Épica</title>
+<title>FUTURO DIGITAL - Tu Transformación Épica</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
     * {
@@ -237,6 +237,24 @@
         transform: rotate(-45deg) translate(6px, -6px);
     }
 
+    /* Estilos para los íconos del menú */
+    .nav-icon {
+        display: inline-block;
+        margin-right: 8px;
+        transition: all 0.3s ease;
+        transform: scale(1);
+    }
+
+    .nav-item:hover .nav-icon {
+        transform: scale(1.2) rotate(10deg);
+        animation: bounce 0.5s ease infinite alternate;
+    }
+
+    @keyframes bounce {
+        from { transform: translateY(0) scale(1); }
+        to { transform: translateY(-3px) scale(1.1); }
+    }
+
     /* Menú Desktop */
     .nav-items {
         display: flex;
@@ -247,7 +265,7 @@
     .nav-item {
         background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
         color: #ffc107;
-        padding: 12px 20px;
+        padding: 12px 20px 12px 15px;
         border-radius: 50px;
         border: 1px solid rgba(255, 193, 7, 0.3);
         font-weight: 600;
@@ -256,14 +274,32 @@
         cursor: pointer;
         font-size: 0.9rem;
         white-space: nowrap;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-item::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #ffeb3b;
+        transition: width 0.3s ease;
+    }
+
+    .nav-item:hover::after {
+        width: 100%;
     }
 
     .nav-item:hover,
     .nav-item:focus {
-        background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%);
-        color: #000000;
-        transform: translateY(-2px);
+        background: linear-gradient(135deg, rgba(255, 193, 7, 0.2) 0%, rgba(255, 235, 59, 0.15) 100%);
+        color: #ffeb3b;
+        transform: translateY(-3px) scale(1.05);
         box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+        border-color: rgba(255, 193, 7, 0.6);
     }
 
     /* Menú Móvil MEJORADO */
@@ -1209,15 +1245,29 @@
         <a class="nav-logo" href="#inicio">
             <img alt="Future Digital Logo" src="futuro_digital_logo_correcto.png"/>
         </a>
-        <!-- Menú Desktop -->
+        <!-- Menú Desktop - Versión mejorada -->
         <div class="nav-items">
-            <a class="nav-item" href="#beneficios">Beneficios</a>
-            <a class="nav-item" href="#avatars">Avatares</a>
-            <a class="nav-item" href="#vision">Visión</a>
-            <a class="nav-item" href="#diagnostico">Diagnóstico</a>
-            <a class="nav-item" href="#sesiones">Sesiones</a>
-            <a class="nav-item" href="#stats">Estadísticas</a>
-            <a class="nav-item" href="#descargarPDF">Actuar</a>
+            <a class="nav-item" href="#beneficios">
+                <span class="nav-icon">☺</span> Beneficios
+            </a>
+            <a class="nav-item" href="#avatars">
+                <span class="nav-icon">💷</span> Avatares
+            </a>
+            <a class="nav-item" href="#vision">
+                <span class="nav-icon">💸</span> Visión
+            </a>
+            <a class="nav-item" href="#diagnostico">
+                <span class="nav-icon">💹</span> Diagnóstico
+            </a>
+            <a class="nav-item" href="#sesiones">
+                <span class="nav-icon">⚠</span> Sesiones
+            </a>
+            <a class="nav-item" href="#stats">
+                <span class="nav-icon">❤</span> Estadísticas
+            </a>
+            <a class="nav-item" href="#descargarPDF">
+                <span class="nav-icon">☺</span> Actuar
+            </a>
         </div>
         <!-- Botón Hamburguesa MEJORADO -->
         <button aria-label="Menú" class="hamburger" id="hamburger" type="button">
