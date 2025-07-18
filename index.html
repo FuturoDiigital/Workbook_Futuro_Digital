@@ -489,27 +489,7 @@
         font-size: 1rem;
         line-height: 1.6;
     }
-<div class="section section-bg-1">
-  <div class="container">
-    <div style="text-align: center; margin-bottom: 30px;">
-      <h3 style="color: #ffc107; font-family: 'JetBrains Mono', monospace;">
-        ANTES DE EMPEZAR...
-      </h3>
-    </div>
-    <div class="card" style="max-width: 600px; margin: 0 auto;">
-      <label class="form-label">🏷️ Tu nombre completo:</label>
-      <input 
-        id="userName" 
-        class="form-input" 
-        placeholder="Ej: Ana García López" 
-        type="text"
-      />
-      <p style="color: #cccccc; margin-top: 10px; font-size: 0.9rem;">
-        Así personalizaremos tu experiencia.
-      </p>
-    </div>
-  </div>
-</div>
+
     /* AVATAR CARDS */
     .avatar-grid {
         display: grid;
@@ -1239,17 +1219,17 @@
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <!-- HERO SECTION -->
-<div class="hero-section">
+<div class="hero-section" id="heroSection">
     <div class="container">
         <div class="hero-content">
             <div class="logo-section"></div>
-            <div class="warning-box">
+            <div class="warning-box" id="warningBox">
                 <div class="warning-title">ADVERTENCIA IMPORTANTE</div>
                 <div class="warning-text">
                     Este NO es un workbook convencional. Es una <strong>HERRAMIENTA DE TRANSFORMACIÓN</strong> diseñada para convertir personas con potencial en <strong>DESARROLLADORES FULLSTACK PROFESIONALES</strong>. Una vez que empiezas este proceso, tu perspectiva sobre tu futuro cambiará para siempre.
                 </div>
                 <div style="margin-top: 50px;">  
-                    <button class="btn-primary" onclick="scrollToSection('beneficios')">
+                    <button class="btn-primary" id="startTransformationBtn" onclick="scrollToSection('beneficios')">
                         COMENZAR MI TRANSFORMACIÓN
                     </button>
                 </div>
@@ -1262,50 +1242,50 @@
 <nav class="nav-menu" id="navbar">
     <div class="nav-container" style="display: flex; justify-content: center; flex-wrap: wrap;">  
         <!-- Logo reinsertado en su posición original dentro de la navegación -->
-        <a class="nav-logo" href="#inicio">
-            <img alt="Future Digital Logo" src="futuro_digital_logo_correcto.png"/>
+        <a class="nav-logo" href="#inicio" id="navLogo">
+            <img alt="Future Digital Logo" src="futuro_digital_logo_correcto.png" id="logoImg"/>
         </a>
         <!-- Menú Desktop - Versión mejorada -->
-        <div class="nav-items">
-            <a class="nav-item" href="#beneficios">
+        <div class="nav-items" id="desktopNavItems">
+            <a class="nav-item" href="#beneficios" id="navBeneficios">
                 <span class="nav-icon">☺</span> Beneficios
             </a>
-            <a class="nav-item" href="#avatars">
+            <a class="nav-item" href="#avatars" id="navAvatars">
                 <span class="nav-icon">💷</span> Avatares
             </a>
-            <a class="nav-item" href="#vision">
+            <a class="nav-item" href="#vision" id="navVision">
                 <span class="nav-icon">💸</span> Visión
             </a>
-            <a class="nav-item" href="#diagnostico">
+            <a class="nav-item" href="#diagnostico" id="navDiagnostico">
                 <span class="nav-icon">💹</span> Diagnóstico
             </a>
-            <a class="nav-item" href="#sesiones">
-                <span class="nav-icon">⚡</span> Sesiones
+            <a class="nav-item" href="#sesiones" id="navSesiones">
+                <span class="nav-icon">⚠</span> Sesiones
             </a>
-            <a class="nav-item" href="#stats">
-                <span class="nav-icon">📊</span> Estadísticas
+            <a class="nav-item" href="#stats" id="navStats">
+                <span class="nav-icon">❤</span> Estadísticas
             </a>
-            <a class="nav-item" href="#descargarPDF">
-                <span class="nav-icon">🫵</span> Actuar
+            <a class="nav-item" href="#descargarPDF" id="navActuar">
+                <span class="nav-icon">☺</span> Actuar
             </a>
         </div>
         <!-- Botón Hamburguesa MEJORADO -->
         <button aria-label="Menú" class="hamburger" id="hamburger" type="button">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
+            <span class="hamburger-line" id="hamburgerLine1"></span>
+            <span class="hamburger-line" id="hamburgerLine2"></span>
+            <span class="hamburger-line" id="hamburgerLine3"></span>
         </button>
     </div>
     <!-- Menú Móvil -->
     <div class="nav-mobile" id="navMobile">
-        <div class="nav-mobile-items">
-            <a class="nav-item" href="#beneficios"> ☺ Beneficios</a>
-            <a class="nav-item" href="#avatars"> 💷 Avatares</a>
-            <a class="nav-item" href="#vision"> 💸 Vision</a>
-            <a class="nav-item" href="#diagnostico"> 💹 Diagnóstico</a>
-            <a class="nav-item" href="#sesiones"> ⚡ Sesiones</a>
-            <a class="nav-item" href="#stats"> 📊 Estadísticas</a>
-            <a class="nav-item" href="#descargarPDF"> 🫵 Actuar</a>
+        <div class="nav-mobile-items" id="mobileNavItems">
+            <a class="nav-item" href="#beneficios" id="mobileNavBeneficios"> ☺ Beneficios</a>
+            <a class="nav-item" href="#avatars" id="mobileNavAvatars"> 💷 Avatares</a>
+            <a class="nav-item" href="#vision" id="mobileNavVision"> 💸 Vision</a>
+            <a class="nav-item" href="#diagnostico" id="mobileNavDiagnostico"> 💹 Diagnóstico</a>
+            <a class="nav-item" href="#sesiones" id="mobileNavSesiones"> ⚠ Sesiones</a>
+            <a class="nav-item" href="#stats" id="mobileNavStats"> ❤ Estadísticas</a>
+            <a class="nav-item" href="#descargarPDF" id="mobileNavActuar"> ☺ Actuar</a>
         </div>
     </div>
     <!-- Overlay -->
@@ -1319,8 +1299,8 @@
             <h2 class="section-title"> ☺ ESTO ES LO QUE VAS A LOGRAR</h2>
             <p class="section-subtitle">Tu nueva realidad como desarrollador FullStack</p>
         </div>
-        <div class="card-grid">
-            <div class="card">
+        <div class="card-grid" id="benefitsGrid">
+            <div class="card" id="benefitCard1">
                 <div class="card-icon"> 💶 </div>
                 <div class="card-title">INGRESOS</div>
                 <div class="card-description">
@@ -1328,16 +1308,16 @@
                     Trabajando desde cualquier lugar
                 </div>
             </div>
-            <div class="card">
-                <div class="card-icon"> ⛓️‍💥 </div>
+            <div class="card" id="benefitCard2">
+                <div class="card-icon"> 💶 </div>
                 <div class="card-title">LIBERTAD</div>
                 <div class="card-description">
                     <strong>Libertad geográfica total</strong><br/>
                     Trabaja para empresas de todo el mundo
                 </div>
             </div>
-            <div class="card">
-                <div class="card-icon"> 👏 </div>
+            <div class="card" id="benefitCard3">
+                <div class="card-icon"> 💶 </div>
                 <div class="card-title">HABILIDADES</div>
                 <div class="card-description">
                     <strong>Habilidades del futuro, pero reales</strong><br/>
@@ -1348,8 +1328,8 @@
                     Aprende a resolver problemas reales con lógica, creatividad y claridad.
                 </div>
             </div>
-            <div class="card">
-                <div class="card-icon"> 🏆 </div>
+            <div class="card" id="benefitCard4">
+                <div class="card-icon">    </div>
                 <div class="card-title">RECONOCIMIENTO</div>
                 <div class="card-description">
                     <strong>Sé leyenda en tu círculo</strong><br/>
@@ -1370,9 +1350,9 @@
             <h2 class="section-title">🚫 ELIGE TU AVATAR DIGITAL</h2>
             <p class="section-subtitle">Cada transformación tiene un punto de partida. ¿Cuál es el tuyo?</p>
         </div>
-        <div class="avatar-grid">
-            <div class="avatar-card">
-                <span class="avatar-emoji"> 🤠</span>
+        <div class="avatar-grid" id="avatarSelectionGrid">
+            <div class="avatar-card" id="avatarCard1">
+                <span class="avatar-emoji"> 🚫</span>
                 <h3 class="avatar-name">KEVIN "EL DECIDIDO"</h3>
                 <p class="avatar-title">23 años • Busca Independencia Profesional</p>
                 <ul class="avatar-stats">
@@ -1382,12 +1362,12 @@
                     <li><strong>Motivación:</strong> "Quiero construir mi futuro"</li>
                 </ul>
                 <div class="checkbox-container">
-                    <input class="custom-checkbox" id="Kevin" type="checkbox"/>
-                    <label for="Kevin" style="color: #ffc107; font-weight: 600;">Soy Kevin</label>
+                    <input class="custom-checkbox" id="avatarCheckbox1" type="checkbox"/>
+                    <label for="avatarCheckbox1" style="color: #ffc107; font-weight: 600;">Soy Kevin</label>
                 </div>
             </div>
-            <div class="avatar-card">
-                <span class="avatar-emoji">🙎‍♂️</span>
+            <div class="avatar-card" id="avatarCard2">
+                <span class="avatar-emoji">🚫</span>
                 <h3 class="avatar-name">LUIS "EL PERSISTENTE"</h3>
                 <p class="avatar-title">28 años • Con Experiencia Previa</p>
                 <ul class="avatar-stats">
@@ -1397,12 +1377,12 @@
                     <li><strong>Motivación:</strong> "Esta vez será diferente"</li>
                 </ul>
                 <div class="checkbox-container">
-                    <input class="custom-checkbox" id="luis" type="checkbox"/>
-                    <label for="luis" style="color: #ffc107; font-weight: 600;">Soy Luis</label>
+                    <input class="custom-checkbox" id="avatarCheckbox2" type="checkbox"/>
+                    <label for="avatarCheckbox2" style="color: #ffc107; font-weight: 600;">Soy Luis</label>
                 </div>
             </div>
-            <div class="avatar-card">
-                <span class="avatar-emoji">💆</span>
+            <div class="avatar-card" id="avatarCard3">
+                <span class="avatar-emoji">🚫</span>
                 <h3 class="avatar-name">JAVIER "EL ESTRATEGA"</h3>
                 <p class="avatar-title">35 años • Profesional Experimentado</p>
                 <ul class="avatar-stats">
@@ -1412,12 +1392,12 @@
                     <li><strong>Motivación:</strong> "Es mi momento decisivo"</li>
                 </ul>
                 <div class="checkbox-container">
-                    <input class="custom-checkbox" id="javier" type="checkbox"/>
-                    <label for="javier" style="color: #ffc107; font-weight: 600;">Soy Javier</label>
+                    <input class="custom-checkbox" id="avatarCheckbox3" type="checkbox"/>
+                    <label for="avatarCheckbox3" style="color: #ffc107; font-weight: 600;">Soy Javier</label>
                 </div>
             </div>
-            <div class="avatar-card">
-                <span class="avatar-emoji">🧏‍♀️</span>
+            <div class="avatar-card" id="avatarCard4">
+                <span class="avatar-emoji">🚫</span>
                 <h3 class="avatar-name">PAOLA "LA VISIONARIA"</h3>
                 <p class="avatar-title">22 años • Perfil Creativo-Digital</p>
                 <ul class="avatar-stats">
@@ -1427,14 +1407,14 @@
                     <li><strong>Motivación:</strong> "Voy a innovar mi futuro"</li>
                 </ul>
                 <div class="checkbox-container">
-                    <input class="custom-checkbox" id="paola" type="checkbox"/>
-                    <label for="paola" style="color: #ffc107; font-weight: 600;">Soy Paola</label>
+                    <input class="custom-checkbox" id="avatarCheckbox4" type="checkbox"/>
+                    <label for="avatarCheckbox4" style="color: #ffc107; font-weight: 600;">Soy Paola</label>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <label class="form-label"></label>
-            <input class="form-input" placeholder="Escribe aquí tu nombre completo porfavor ..." type="text"/>
+            <label class="form-label" id="avatarNameLabel"></label>
+            <input class="form-input" id="avatarNameInput" placeholder="Escribe aquí el nombre de tu avatar digital..." type="text"/>
         </div>
     </div>
 </div>
@@ -1446,31 +1426,31 @@
             <h2 class="section-title"> MÁQUINA DEL TIEMPO ACTIVADA</h2>
             <p class="section-subtitle">Destino: 15 de Enero de 2026 • Tu nueva realidad como FullStack Developer</p>
         </div>
-        <div class="special-section">
+        <div class="special-section" id="futureVisionSection">
             <h3 class="special-title"> HAS VIAJADO 12 MESES AL FUTURO </h3>
             <div class="form-group">
-                <label class="form-label"> ¿Dónde despiertas en tu nueva vida?</label>
-                <textarea class="form-input form-textarea" placeholder="Describe tu nuevo hogar, tu habitación, la vista desde tu ventana..."></textarea>
+                <label class="form-label" id="futureLocationLabel"> ¿Dónde despiertas en tu nueva vida?</label>
+                <textarea class="form-input form-textarea" id="futureLocationText" placeholder="Describe tu nuevo hogar, tu habitación, la vista desde tu ventana..."></textarea>
             </div>
             <div class="form-group">
-                <label class="form-label"> ¿Cuál es tu nueva rutina matutina de libertad?</label>
-                <textarea class="form-input form-textarea" placeholder="Ya no tienes jefe ni horarios... ¿Cómo empiezas tu día?"></textarea>
+                <label class="form-label" id="futureRoutineLabel"> ¿Cuál es tu nueva rutina matutina de libertad?</label>
+                <textarea class="form-input form-textarea" id="futureRoutineText" placeholder="Ya no tienes jefe ni horarios... ¿Cómo empiezas tu día?"></textarea>
             </div>
             <div class="form-group">
-                <label class="form-label"> ¿En qué proyecto épico estás trabajando?</label>
-                <textarea class="form-input form-textarea" placeholder="¿Qué aplicación, web o sistema estás desarrollando?"></textarea>
+                <label class="form-label" id="futureProjectLabel"> ¿En qué proyecto épico estás trabajando?</label>
+                <textarea class="form-input form-textarea" id="futureProjectText" placeholder="¿Qué aplicación, web o sistema estás desarrollando?"></textarea>
             </div>
             <div class="form-group">
-                <label class="form-label"> Tu salario mensual como FullStack Developer:</label>
-                <input class="form-input" placeholder="$____ MXN mensuales" style="font-size: 1.2em; text-align: center; font-weight: bold;" type="text"/>
+                <label class="form-label" id="futureSalaryLabel"> Tu salario mensual como FullStack Developer:</label>
+                <input class="form-input" id="futureSalaryInput" placeholder="$____ MXN mensuales" style="font-size: 1.2em; text-align: center; font-weight: bold;" type="text"/>
             </div>
             <div class="form-group">
-                <label class="form-label"> ¿Cómo reacciona tu familia a tu transformación?</label>
-                <textarea class="form-input form-textarea" placeholder="¿Qué te dicen? ¿Cómo te ven ahora?"></textarea>
+                <label class="form-label" id="familyReactionLabel"> ¿Cómo reacciona tu familia a tu transformación?</label>
+                <textarea class="form-input form-textarea" id="familyReactionText" placeholder="¿Qué te dicen? ¿Cómo te ven ahora?"></textarea>
             </div>
             <div class="form-group">
-                <label class="form-label"> ¿Qué fue lo primero que compraste con tu nuevo salario?</label>
-                <textarea class="form-input form-textarea" placeholder="Esa compra especial que simboliza tu nueva vida..."></textarea>
+                <label class="form-label" id="firstPurchaseLabel"> ¿Qué fue lo primero que compraste con tu nuevo salario?</label>
+                <textarea class="form-input form-textarea" id="firstPurchaseText" placeholder="Esa compra especial que simboliza tu nueva vida..."></textarea>
             </div>
         </div>
     </div>
@@ -1483,38 +1463,38 @@
             <h2 class="section-title"> DIAGNÓSTICO BRUTAL</h2>
             <p class="section-subtitle">La cruda realidad de tu situación actual (sin filtros)</p>
         </div>
-        <div class="special-section">
+        <div class="special-section" id="currentSituationSection">
             <div style="background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%); color: #000; padding: 20px; border-radius: 15px; text-align: center; font-weight: 700; margin-bottom: 40px;">  
                 ZONA DE HONESTIDAD BRUTAL - Es hora de ser 100% real contigo mismo  
             </div>  
 
             <div class="two-column">
                 <div class="form-group">
-                    <label class="form-label"> 💬 ¿En qué trabajas actualmente?</label>  
-                    <input class="form-input" placeholder="Mi trabajo actual es..." type="text"/>  
+                    <label class="form-label" id="currentJobLabel"> 💬 ¿En qué trabajas actualmente?</label>  
+                    <input class="form-input" id="currentJobInput" placeholder="Mi trabajo actual es..." type="text"/>  
                 </div>  
 
                 <div class="form-group">
-                    <label class="form-label"> 💬 ¿Cuánto ganas al mes? (sin mentiras)</label>  
-                    <input class="form-input" placeholder="$_____ MXN" type="text"/>  
+                    <label class="form-label" id="currentSalaryLabel"> 💬 ¿Cuánto ganas al mes? (sin mentiras)</label>  
+                    <input class="form-input" id="currentSalaryInput" placeholder="$_____ MXN" type="text"/>  
                 </div>  
             </div>
 
             <div class="two-column">
                 <div class="form-group">
-                    <label class="form-label"> 💬 Del 1 al 10, ¿cuánto sabes de programación?</label>  
-                    <input class="form-input" max="10" min="1" placeholder="_/10" type="number"/>  
+                    <label class="form-label" id="programmingKnowledgeLabel"> 💬 Del 1 al 10, ¿cuánto sabes de programación?</label>  
+                    <input class="form-input" id="programmingKnowledgeInput" max="10" min="1" placeholder="_/10" type="number"/>  
                 </div>  
 
                 <div class="form-group">
-                    <label class="form-label"> 💬 ¿Cuántas horas REALES tienes libres al día?</label>  
-                    <input class="form-input" placeholder="_horas" type="text"/>  
+                    <label class="form-label" id="freeTimeLabel"> 💬 ¿Cuántas horas REALES tienes libres al día?</label>  
+                    <input class="form-input" id="freeTimeInput" placeholder="_horas" type="text"/>  
                 </div>  
             </div>
 
             <div class="form-group">
-                <label class="form-label"> 💬 ¿Cuál es tu situación de vivienda actual?</label>  
-                <input class="form-input" placeholder="Vivo en... (con padres, solo, pareja, etc.)" type="text"/>  
+                <label class="form-label" id="livingSituationLabel"> 💬 ¿Cuál es tu situación de vivienda actual?</label>  
+                <input class="form-input" id="livingSituationInput" placeholder="Vivo en... (con padres, solo, pareja, etc.)" type="text"/>  
             </div>  
 
             <div style="background: rgba(255, 193, 7, 0.05); border-radius: 20px; padding: 40px; margin: 40px 0; border: 1px solid rgba(255, 193, 7, 0.2);">  
@@ -1523,22 +1503,22 @@
                 </h4>  
 
                 <div class="form-group">
-                    <label class="form-label"> 💬 ¿Qué es lo que MÁS te frustra de tu vida actual?</label>  
-                    <textarea class="form-input form-textarea" placeholder="Sé brutalmente honesto... ¿Qué te tiene harto?"></textarea>  
+                    <label class="form-label" id="frustrationLabel"> 💬 ¿Qué es lo que MÁS te frustra de tu vida actual?</label>  
+                    <textarea class="form-input form-textarea" id="frustrationText" placeholder="Sé brutalmente honesto... ¿Qué te tiene harto?"></textarea>  
                 </div>  
 
                 <div class="form-group">
-                    <label class="form-label"> 💬 ¿Cuál es tu PEOR pesadilla sobre tu futuro?</label>  
-                    <textarea class="form-input form-textarea" placeholder="Si nada cambia... ¿Qué es lo peor que podría pasar?"></textarea>  
+                    <label class="form-label" id="worstNightmareLabel"> 💬 ¿Cuál es tu PEOR pesadilla sobre tu futuro?</label>  
+                    <textarea class="form-input form-textarea" id="worstNightmareText" placeholder="Si nada cambia... ¿Qué es lo peor que podría pasar?"></textarea>  
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label"> •• Si en 2 años sigues exactamente igual... ¿Cómo te sentirías?</label>
-                    <textarea class="form-input form-textarea" placeholder="Imagina que absolutamente nada cambia en tu vida..."></textarea>
+                    <label class="form-label" id="noChangeLabel"> •• Si en 2 años sigues exactamente igual... ¿Cómo te sentirías?</label>
+                    <textarea class="form-input form-textarea" id="noChangeText" placeholder="Imagina que absolutamente nada cambia en tu vida..."></textarea>
                 </div>
                 <div class="form-group">
-                    <label class="form-label"> 💤 ¿Qué te haría sentir VERDADERAMENTE orgulloso de ti mismo?</label>
-                    <textarea class="form-input form-textarea" placeholder="Tu mayor aspiración... ¿Qué te llenaría de orgullo?"></textarea>
+                    <label class="form-label" id="proudMomentLabel"> 💤 ¿Qué te haría sentir VERDADERAMENTE orgulloso de ti mismo?</label>
+                    <textarea class="form-input form-textarea" id="proudMomentText" placeholder="Tu mayor aspiración... ¿Qué te llenaría de orgullo?"></textarea>
                 </div>
             </div>
         </div>
@@ -1552,48 +1532,48 @@
             <h2 class="section-title">🖢 ESTADÍSTICAS QUE IMPACTAN</h2>
             <p class="section-subtitle">Los números no mienten: Esta es tu oportunidad dorada</p>
         </div>
-        <div class="stats-container">
-            <div class="stat-card">
+        <div class="stats-container" id="statsContainer">
+            <div class="stat-card" id="statCard1">
                 <div class="stat-number">95%</div>
                 <div class="stat-label">EMPLEABILIDAD</div>
                 <div class="stat-description">De nuestros egresados consiguen trabajo como FullStack</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" id="statCard2">
                 <div class="stat-number">$25K</div>
                 <div class="stat-label">SALARIO PROMEDIO</div>
                 <div class="stat-description">MXN mensuales de nuestros desarrolladores</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" id="statCard3">
                 <div class="stat-number">6</div>
                 <div class="stat-label">MESES PROMEDIO</div>
                 <div class="stat-description">Para conseguir su primer empleo tech</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" id="statCard4">
                 <div class="stat-number">∞</div>
                 <div class="stat-label">POTENCIAL</div>
                 <div class="stat-description">Las oportunidades en tech no tienen límite</div>
             </div>
         </div>
         <!-- Testimonios -->
-        <div style="margin-top: 80px;">
+        <div style="margin-top: 80px;" id="testimonialsSection">
             <h3 style="text-align: center; color: #ffc107; font-size: 2rem; margin-bottom: 50px; font-family: 'JetBrains Mono', monospace;">
                 📌 HISTORIAS DE TRANSFORMACIÓN REAL
             </h3>
-            <div class="testimonial-container">
+            <div class="testimonial-container" id="testimonial1">
                 <div class="testimonial-text">
                     "Nunca imaginé que yo, sin experiencia alguna en programación, pudiera crear algo desde cero. Estudié Administración de empresas de entretenimiento y comunicación, y buscaba solo complementar mi formación... pero en Futuro Digital encontré mucho más. Hoy tengo mi propia página web para mi emprendimiento. Aprendí, me sentí acompañada, y lo logré. No sabes lo que significa para mí poder decir eso con orgullo."
                 </div>
                 <div class="testimonial-author">— Abigail Salinas Peña</div>
                 <div class="testimonial-role">Estudiante de Administración de Empresas de Entretenimiento y Comunicación</div>
             </div>
-            <div class="testimonial-container">
+            <div class="testimonial-container" id="testimonial2">
                 <div class="testimonial-text">
                     "Después de salir de la universidad, pasé meses sin encontrar trabajo. Sentía que lo que había estudiado no era suficiente, y que nadie me estaba esperando allá afuera. Futuro Digital cambió todo eso. Me dieron estructura, práctica, guía y comunidad. Hoy trabajo en tecnología, con personas que conocí en el curso y que ahora son parte de mi equipo. Encontré un lugar donde me sentí visto y preparado para avanzar."
                 </div>
                 <div class="testimonial-author">— Jorge Armando Muñoz de la Cruz</div>
                 <div class="testimonial-role">Especialista en Desarrollo Backend</div>
             </div>
-            <div class="testimonial-container">
+            <div class="testimonial-container" id="testimonial3">
                 <div class="testimonial-text">
                     "A los 24 años estaba perdido sin dirección clara. Futuro Digital no solo me enseñó programación, me dio una profesión con futuro. Ahora trabajo como freelancer para clientes internacionales y tengo la libertad que siempre busqué. Fue la mejor inversión de mi vida."
                 </div>
@@ -1612,94 +1592,94 @@
             <p class="section-subtitle">Tu journey de transformación comienza aquí</p>
         </div>
         <!-- SESIÓN 1: DESTINO -->
-        <div class="session-container">
+        <div class="session-container" id="session1Container">
             <div class="session-number">1</div>
             <h3 class="session-title">SESIÓN DESTINO</h3>
             <p class="session-subtitle">"¿Qué vas a lograr? El poder de la visión clara"</p>
             <div class="form-group">
-                <label class="form-label"> 7 Notas de la Sesión Destino:</label>
-                <textarea class="form-input form-textarea" placeholder="Escribe aquí los insights más poderosos que recibiste..." style="min-height: 120px;"></textarea>
+                <label class="form-label" id="session1NotesLabel"> 7 Notas de la Sesión Destino:</label>
+                <textarea class="form-input form-textarea" id="session1NotesText" placeholder="Escribe aquí los insights más poderosos que recibiste..." style="min-height: 120px;"></textarea>
             </div>
             <div class="two-column">
                 <div class="form-group">
-                    <label class="form-label"> 9 El insight que te voló la mente:</label>
-                    <textarea class="form-input form-textarea" placeholder="¿Qué descubrimiento cambió tu perspectiva?"></textarea>
+                    <label class="form-label" id="session1InsightLabel"> 9 El insight que te voló la mente:</label>
+                    <textarea class="form-input form-textarea" id="session1InsightText" placeholder="¿Qué descubrimiento cambió tu perspectiva?"></textarea>
                 </div>
                 <div class="form-group">
-                    <label class="form-label"> 10 Lo que más te emocionó:</label>
-                    <textarea class="form-input form-textarea" placeholder="¿Qué te llenó de energía y esperanza?"></textarea>
+                    <label class="form-label" id="session1ExcitementLabel"> 10 Lo que más te emocionó:</label>
+                    <textarea class="form-input form-textarea" id="session1ExcitementText" placeholder="¿Qué te llenó de energía y esperanza?"></textarea>
                 </div>
             </div>
             <div style="background: rgba(255, 193, 7, 0.08); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid rgba(255, 193, 7, 0.3);">
                 <h4 style="color: #ffc107; text-align: center; margin-bottom: 25px; font-size: 1.4em; font-family: 'JetBrains Mono', monospace;"> @ RITUAL DE COMPROMISO</h4>
                 <p style="color: #cccccc; margin-bottom: 30px; font-style: italic; text-align: center;">"Los verdaderos guerreros digitales hacen juramentos sagrados..."</p>
                 <div class="form-group">
-                    <label class="form-label">Mi nombre completo:</label>
-                    <input class="form-input" placeholder="Escribe tu nombre completo aquí" type="text"/> 
+                    <label class="form-label" id="fullNameLabel">Mi nombre completo:</label>
+                    <input class="form-input" id="fullNameInput" placeholder="Escribe tu nombre completo aquí" type="text"/> 
                 </div>
                 <p style="color: #ffffff; margin: 30px 0; text-align: center; font-size: 1.1em;">Juro convertirme en desarrollador FullStack porque:</p>
                 <div class="form-group">
-                    <label class="form-label">1. Mi razón más poderosa:</label>
-                    <input class="form-input" placeholder="La razón que te mueve más profundamente..." type="text"/> 
+                    <label class="form-label" id="reason1Label">1. Mi razón más poderosa:</label>
+                    <input class="form-input" id="reason1Input" placeholder="La razón que te mueve más profundamente..." type="text"/> 
                 </div>
                 <div class="form-group">
-                    <label class="form-label">2. Mi segunda razón:</label>
-                    <input class="form-input" placeholder="Otra razón fundamental..." type="text"/> 
+                    <label class="form-label" id="reason2Label">2. Mi segunda razón:</label>
+                    <input class="form-input" id="reason2Input" placeholder="Otra razón fundamental..." type="text"/> 
                 </div>
                 <div class="form-group">
-                    <label class="form-label">3. Mi tercera razón:</label>
-                    <input class="form-input" placeholder="Una razón más que te impulsa..." type="text"/> 
+                    <label class="form-label" id="reason3Label">3. Mi tercera razón:</label>
+                    <input class="form-input" id="reason3Input" placeholder="Una razón más que te impulsa..." type="text"/> 
                 </div>
                 <div class="two-column" style="margin-top: 30px;">
                     <div class="form-group">
-                        <label class="form-label"> 17 Fecha de mi compromiso:</label>
-                        <input class="form-input" type="date">  
+                        <label class="form-label" id="commitmentDateLabel"> 17 Fecha de mi compromiso:</label>
+                        <input class="form-input" id="commitmentDateInput" type="date">  
                     </div>  
                     <div class="form-group">  
-                        <label class="form-label"> Tu firma digital: </label>  
-                        <input class="form-input" placeholder="Firma aquí tu compromiso" type="text">  
+                        <label class="form-label" id="digitalSignatureLabel"> Tu firma digital: </label>  
+                        <input class="form-input" id="digitalSignatureInput" placeholder="Firma aquí tu compromiso" type="text">  
                     </div>  
                 </div>
             </div>
         </div>
 
         <!-- SESIÓN 2: MAPA -->
-        <div class="session-container">
+        <div class="session-container" id="session2Container">
             <div class="session-number">2</div>
             <h3 class="session-title">SESIÓN MAPA</h3>
             <p class="session-subtitle">"¿Cómo lo vas a lograr? La estrategia maestra revelada"</p>
             <div class="form-group">
-                <label class="form-label"> Notas de la Sesión Mapa: </label>
-                <textarea class="form-input form-textarea" placeholder="Anota aquí toda la metodología y estrategias que aprendiste..." style="min-height: 120px;"></textarea>
+                <label class="form-label" id="session2NotesLabel"> Notas de la Sesión Mapa: </label>
+                <textarea class="form-input form-textarea" id="session2NotesText" placeholder="Anota aquí toda la metodología y estrategias que aprendiste..." style="min-height: 120px;"></textarea>
             </div>
             <div style="background: rgba(255, 193, 7, 0.08); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid rgba(255, 193, 7, 0.3);">
                 <h4 style="color: #ffc107; margin-bottom: 25px; font-family: 'JetBrains Mono', monospace;"> LOS 3 PASOS MAESTROS DEL ÉXITO:</h4>
                 <div class="form-group">
-                    <label class="form-label">1. Primer paso fundamental: </label>
-                    <input class="form-input" placeholder="El primer paso de tu journey..." type="text">
+                    <label class="form-label" id="step1Label">1. Primer paso fundamental: </label>
+                    <input class="form-input" id="step1Input" placeholder="El primer paso de tu journey..." type="text">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">2. Segundo paso clave: </label>
-                    <input class="form-input" placeholder="El segundo paso crítico..." type="text">
+                    <label class="form-label" id="step2Label">2. Segundo paso clave: </label>
+                    <input class="form-input" id="step2Input" placeholder="El segundo paso crítico..." type="text">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">3. Tercer paso definitivo: </label>
-                    <input class="form-input" placeholder="El paso que te lleva al éxito..." type="text">
+                    <label class="form-label" id="step3Label">3. Tercer paso definitivo: </label>
+                    <input class="form-input" id="step3Input" placeholder="El paso que te lleva al éxito..." type="text">
                 </div>
             </div>
             <div class="two-column">
                 <div class="form-group">
-                    <label class="form-label"> Lo que te sorprendió de la metodología: </label>
-                    <textarea class="form-input form-textarea" placeholder="¿Qué no esperabas escuchar?"></textarea>
+                    <label class="form-label" id="surpriseMethodLabel"> Lo que te sorprendió de la metodología: </label>
+                    <textarea class="form-input form-textarea" id="surpriseMethodText" placeholder="¿Qué no esperabas escuchar?"></textarea>
                 </div>
                 <div class="form-group">
-                    <label class="form-label"> Por qué ahora tienes más confianza: </label>
-                    <textarea class="form-input form-textarea" placeholder="¿Qué te tranquilizó y motivó?"></textarea>
+                    <label class="form-label" id="confidenceReasonLabel"> Por qué ahora tienes más confianza: </label>
+                    <textarea class="form-input form-textarea" id="confidenceReasonText" placeholder="¿Qué te tranquilizó y motivó?"></textarea>
                 </div>
             </div>
 
             <!-- Tabla de Comparación -->
-            <div class="comparison-table">
+            <div class="comparison-table" id="comparisonTable">
                 <div class="table-header">
                     BATTLE ROYALE: Futuro Digital vs La Competencia
                 </div>
@@ -1714,18 +1694,18 @@
                     <tbody>
                         <tr>
                             <td style="color: #cccccc; font-weight: 600;">Acompañamiento Real</td>
-                            <td><input placeholder="Escribe aquí..." type="text"/></td>
-                            <td><input placeholder="Escribe aquí..." type="text"/></td>
+                            <td><input id="fdSupportInput" placeholder="Escribe aquí..." type="text"/></td>
+                            <td><input id="othersSupportInput" placeholder="Escribe aquí..." type="text"/></td>
                         </tr>
                         <tr>
                             <td style="color: #cccccc; font-weight: 600;">Garantía de Empleo</td>
-                            <td><input placeholder="Escribe aquí..." type="text"/></td>
-                            <td><input placeholder="Escribe aquí..." type="text"/></td>
+                            <td><input id="fdJobGuaranteeInput" placeholder="Escribe aquí..." type="text"/></td>
+                            <td><input id="othersJobGuaranteeInput" placeholder="Escribe aquí..." type="text"/></td>
                         </tr>
                         <tr>
                             <td style="color: #cccccc; font-weight: 600;">Valor/Precios</td>
-                            <td><input placeholder="Escribe aquí..." type="text"/></td>
-                            <td><input placeholder="Escribe aquí..." type="text"/></td>
+                            <td><input id="fdValueInput" placeholder="Escribe aquí..." type="text"/></td>
+                            <td><input id="othersValueInput" placeholder="Escribe aquí..." type="text"/></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1733,13 +1713,13 @@
         </div>
 
         <!-- SESIÓN 3: VEHÍCULO -->
-        <div class="session-container">
+        <div class="session-container" id="session3Container">
             <div class="session-number">3</div>
             <h3 class="session-title">SESIÓN VEHÍCULO</h3>
             <p class="session-subtitle">"Tu arma secreta: El programa que lo cambia todo"</p>
             <div class="form-group">
-                <label class="form-label"> [ ] Notas de la Sesión Vehículo:</label>
-                <textarea class="form-input form-textarea" placeholder="Todo lo que aprendiste sobre el programa FullStack..." style="min-height: 120px;"></textarea>
+                <label class="form-label" id="session3NotesLabel"> [ ] Notas de la Sesión Vehículo:</label>
+                <textarea class="form-input form-textarea" id="session3NotesText" placeholder="Todo lo que aprendiste sobre el programa FullStack..." style="min-height: 120px;"></textarea>
             </div>
 
             <!-- Calculadora de ROI -->
@@ -1747,22 +1727,22 @@
                 <h4 style="color: #ffc107; text-align: center; margin-bottom: 30px; font-size: 1.4em; font-family: 'JetBrains Mono', monospace;">💰 CALCULADORA DE TRANSFORMACIÓN</h4>
                 <div class="two-column">
                     <div class="form-group">
-                        <label class="form-label">🏦 Mi inversión en el programa:</label>
-                        <input class="form-input" placeholder="$_____ MXN" style="font-size: 1.2em; text-align: center;" type="text"/>
+                        <label class="form-label" id="investmentLabel">🏦 Mi inversión en el programa:</label>
+                        <input class="form-input" id="investmentInput" placeholder="$_____ MXN" style="font-size: 1.2em; text-align: center;" type="text"/>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">📈 Mis ingresos proyectados año 1:</label>
-                        <input class="form-input" placeholder="$_____ MXN" style="font-size: 1.2em; text-align: center;" type="text"/>
+                        <label class="form-label" id="projectedIncomeLabel">📈 Mis ingresos proyectados año 1:</label>
+                        <input class="form-input" id="projectedIncomeInput" placeholder="$_____ MXN" style="font-size: 1.2em; text-align: center;" type="text"/>
                     </div>
                 </div>
                 <div class="two-column">
                     <div class="form-group">
-                        <label class="form-label">🚀 Mi multiplicador de dinero:</label>
-                        <input class="form-input" placeholder="____x" style="text-align: center;" type="text"/>
+                        <label class="form-label" id="moneyMultiplierLabel">🚀 Mi multiplicador de dinero:</label>
+                        <input class="form-input" id="moneyMultiplierInput" placeholder="____x" style="text-align: center;" type="text"/>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">⚡ Meses para recuperar inversión:</label>
-                        <input class="form-input" placeholder="__ meses" style="text-align: center;" type="text"/>
+                        <label class="form-label" id="roiTimeLabel">⚡ Meses para recuperar inversión:</label>
+                        <input class="form-input" id="roiTimeInput" placeholder="__ meses" style="text-align: center;" type="text"/>
                     </div>
                 </div>
             </div>
@@ -1771,7 +1751,7 @@
 </div>
 
 <!-- CÓDIGO ESPECIAL -->
-<div class="section section-bg-1">
+<div class="section section-bg-1" id="specialCodeSection">
     <div class="container">
         <div style="background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%); border-radius: 30px; padding: 60px; text-align: center; margin: 60px 0; border: 4px solid #ffab00; box-shadow: 0 0 50px rgba(255, 193, 7, 0.4); position: relative; overflow: hidden;">
             <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.1); z-index: 1;"></div>
@@ -1807,7 +1787,7 @@
 </div>
 
 <!-- SECCIÓN DE DESCARGA -->
-<section style="text-align: center; padding: 3rem;">
+<section style="text-align: center; padding: 3rem;" id="downloadSection">
     <h2 style="font-size: 1.6rem; color: #ffc107; margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace;">
         🔄 Descarga tu Workbook con tus respuestas
     </h2>
@@ -1819,7 +1799,7 @@
 </section>
 
 <!-- FOOTER -->
-<div style="text-align: center; margin-top: 60px; margin-bottom: 60px;">
+<div style="text-align: center; margin-top: 60px; margin-bottom: 60px;" id="footerSection">
     <p style="margin-top: 20px; color: #cccccc; font-size: 1rem;">
         Se descargará un PDF con todas tus respuestas para enviar por WhatsApp
     </p>
@@ -1976,74 +1956,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<!-- ================ 🔥 CAPTURA TOTAL DEL WORKBOOK ================ -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
-<script>
-  // 1. Configura Firebase (¡usa tus credenciales!)
-  const firebaseConfig = {
-    apiKey:  "AIzaSyA_eRZuPb_Ldvm3DofdCZNKBIYYn_DlUZM",
-    authDomain:  "futurodigital-ab753.firebaseapp.com",
-    projectId: "futurodigital-ab753",,
-    storageBucket:"futurodigital-ab753.firebasestorage.app"
-  };
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-  const storage = firebase.storage();
-
-  // 2. Función para guardar TODO
-  async function guardarWorkbookCompleto() {
-    // Genera un ID único para el usuario
-    const userId = document.getElementById("userEmail")?.value || "anon-" + Math.random().toString(36).substring(2, 9);
-
-    // A. Captura TODOS los campos del formulario
-    const datosFormulario = {};
-    document.querySelectorAll("input, textarea, select").forEach(campo => {
-      if (campo.type === "checkbox" || campo.type === "radio") {
-        if (campo.checked) datosFormulario[campo.id] = campo.value;
-      } else {
-        datosFormulario[campo.id] = campo.value || "";
-      }
-    });
-
-    // B. Captura screenshot del workbook (como imagen)
-    const screenshotUrl = await html2canvas(document.body).then(async canvas => {
-      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-      const screenshotRef = storage.ref(`screenshots/${userId}.png`);
-      await screenshotRef.put(blob);
-      return await screenshotRef.getDownloadURL();
-    });
-
-    // C. Guarda el PDF generado (si usas jsPDF)
-    let pdfUrl = "";
-    if (typeof pdf !== "undefined") { // Si existe la variable 'pdf' de jsPDF
-      const pdfBlob = await new Promise(resolve => pdf.output("blob", resolve));
-      const pdfRef = storage.ref(`workbooks/${userId}.pdf`);
-      await pdfRef.put(pdfBlob);
-      pdfUrl = await pdfRef.getDownloadURL();
-    }
-
-    // D. Guarda TODO en Firestore
-    await db.collection("workbooksCompletos").doc(userId).set({
-      ...datosFormulario,
-      screenshotUrl,
-      pdfUrl,
-      fecha: new Date().toLocaleString(),
-      userAgent: navigator.userAgent
-    });
-
-    console.log("💾🔥 ¡Workbook guardado con ÉXITO!");
-    alert("¡Toda tu información se guardó correctamente! 🌈");
-  }
-
-  // 3. Guarda automáticamente cada 5 segundos y al interactuar
-  setInterval(guardarWorkbookCompleto, 5000);
-  document.addEventListener("click", guardarWorkbookCompleto);
-  document.addEventListener("keyup", guardarWorkbookCompleto);
-</script>
-<!-- ================ FIN DEL CÓDIGO ================ -->
 </body>
 </html>
