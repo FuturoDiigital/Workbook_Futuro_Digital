@@ -1135,24 +1135,33 @@
     </style>
 <style>
 /* Estilos para el logo */
-.logo-futuro {
-    position: fixed; /* O absolute si está dentro de un contenedor posicionado */
-    top: 60px; /* Ajusta según sea necesario */
-    left: 20px; /* Ajusta según sea necesario */
-    height: 130px; /* Tamaño original */
-    z-index: 9999;
-    background: transparent;
+/* Estos estilos son los que estaban en el archivo original para .nav-logo y la imagen dentro de él */
+.nav-logo {
+    position: absolute !important;
+    left: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    z-index: 10000 !important; /* Asegurar que esté por encima de otros elementos */
+}
+
+.nav-logo img {
+    height: 88px; /* Altura original del logo */
+    max-height: 90px; /* Altura máxima original del logo */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
 }
 
 /* Media queries para el logo en móvil */
 @media (max-width: 768px) {
-  .logo-futuro {
-    position: absolute !important; /* Mantener absolute para que no se superponga con la navegación fija */
-    top: 8px !important; /* Ajuste fino para móvil */
-    left: 16px !important; /* Ajuste fino para móvil */
+  .nav-logo {
+    left: 10px !important; /* Ajuste fino para móvil */
+    top: 60% !important; /* Ajuste fino para móvil */
+    transform: translateY(-50%) !important;
+  }
+  .nav-logo img {
     height: 50px !important; /* Tamaño para móvil */
     max-height: 52px !important; /* Asegurar que no exceda */
-    z-index: 1000 !important; /* Asegurar visibilidad */
   }
 }
 
@@ -1178,11 +1187,6 @@
 </style>
 </head>
 <body>
-<!-- Logo restaurado y ajustado -->
-<div style="position: fixed; top: 60px; left: 20px; z-index: 9999; background: transparent;">
-    <img alt="Futuro Digital" class="logo-futuro" src="https://futurodigitall.github.io/WorkbookFuturoDigital/futuro_digital_logo_correcto.png" style="height: 130px;"/>
-</div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <!-- HERO SECTION -->
 <div class="hero-section">
@@ -1206,6 +1210,10 @@
 <!-- NAVEGACIÓN STICKY MEJORADA -->
 <nav class="nav-menu" id="navbar">
 <div class="nav-container" style="display: flex; justify-content: center; flex-wrap: wrap;">
+    <!-- Logo reinsertado en su posición original dentro de la navegación -->
+    <a class="nav-logo" href="#inicio">
+        <img alt="Futuro Digital Logo" src="https://futurodigitall.github.io/WorkbookFuturoDigital/futuro_digital_logo_correcto.png"/>
+    </a>
 <!-- Menú Desktop -->
 <div class="nav-items">
 <a class="nav-item" href="#beneficios">🎯 Beneficios</a>
