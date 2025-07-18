@@ -1,2235 +1,1928 @@
+<!DOCTYPE html>
+
 <html lang="es">
-
 <head>
-
 <meta charset="utf-8"/>
-
 <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
-
 <title>FUTURO DIGITAL - Tu Transformación Épica</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-
 <style>
-
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
             -webkit-tap-highlight-color: transparent;
-
         }
-
         
-
         html {
-
             scroll-behavior: smooth;
-
             -webkit-text-size-adjust: 100%;
-
         }
-
         
-
         body {
-
             font-family: 'Inter', sans-serif;
-
             background: #0a0a0a;
-
             color: #ffffff;
-
             overflow-x: hidden;
-
             line-height: 1.6;
-
             -webkit-font-smoothing: antialiased;
-
             -moz-osx-font-smoothing: grayscale;
-
         }
-
         
-
         .container {
-
             max-width: 1200px;
-
             margin: 0 auto;
-
             position: relative;
-
             padding: 0 20px;
-
         }
-
         
-
         /* HERO SECTION */
-
         .hero-section {
-
             min-height: 100vh;
-
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
-
             position: relative;
-
             display: flex;
-
             flex-direction: column;
-
             justify-content: center;
-
             align-items: center;
-
             text-align: center;
-
             padding: 80px 20px;
-
             overflow: hidden;
-
         }
-
         
-
         .hero-section::before {
-
             content: '';
-
             position: absolute;
-
             top: 0;
-
             left: 0;
-
             right: 0;
-
             bottom: 0;
-
             background: 
-
                 radial-gradient(circle at 20% 80%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
-
                 radial-gradient(circle at 80% 20%, rgba(255, 193, 7, 0.05) 0%, transparent 50%),
-
                 radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.03) 0%, transparent 50%);
-
             animation: pulse 4s ease-in-out infinite;
-
         }
-
         
-
         @keyframes pulse {
-
             0%, 100% { opacity: 1; }
-
             50% { opacity: 0.8; }
-
         }
-
         
-
         .hero-content {
-
             position: relative;
-
             z-index: 10;
-
             max-width: 900px;
-
         }
-
         
-
         .logo-section {
-
             margin-bottom: 40px;
-
         }
-
         
-
         .main-title {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 4rem;
-
             font-weight: 800;
-
             background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 50%, #ffc107 100%);
-
             -webkit-background-clip: text;
-
             -webkit-text-fill-color: transparent;
-
             background-clip: text;
-
             margin-bottom: 20px;
-
             text-shadow: 0 0 30px rgba(255, 193, 7, 0.3);
-
             animation: glow 3s ease-in-out infinite alternate;
-
         }
-
         
-
         @keyframes glow {
-
             from { filter: drop-shadow(0 0 20px rgba(255, 193, 7, 0.3)); }
-
             to { filter: drop-shadow(0 0 30px rgba(255, 193, 7, 0.6)); }
-
         }
-
         
-
         .subtitle {
-
             font-size: 1.5rem;
-
             color: #ffc107;
-
             margin-bottom: 15px;
-
             font-weight: 600;
-
         }
-
         
-
         .tagline {
-
             font-size: 1.2rem;
-
             color: #cccccc;
-
             margin-bottom: 50px;
-
             font-weight: 400;
-
         }
-
         
-
         .warning-box {
-
             background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
-
             backdrop-filter: blur(10px);
-
             border: 2px solid #ffc107;
-
             border-radius: 20px;
-
             padding: 40px;
-
             margin: 40px 0;
-
             position: relative;
-
             overflow: hidden;
-
         }
-
         
-
         .warning-box::before {
-
             content: '';
-
             position: absolute;
-
             top: -50%;
-
             left: -50%;
-
             width: 200%;
-
             height: 200%;
-
             background: linear-gradient(45deg, transparent, rgba(255, 193, 7, 0.1), transparent);
-
             transform: rotate(45deg);
-
             animation: shine 3s linear infinite;
-
         }
-
         
-
         @keyframes shine {
-
             0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-
             100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-
         }
-
         
-
         .warning-title {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 1.8rem;
-
             font-weight: 700;
-
             color: #ffc107;
-
             margin-bottom: 20px;
-
             position: relative;
-
             z-index: 10;
-
         }
-
         
-
         .warning-text {
-
             font-size: 1.1rem;
-
             line-height: 1.7;
-
             color: #ffffff;
-
             font-weight: 500;
-
             position: relative;
-
             z-index: 10;
-
         }
-
-
 
         /* NAVEGACIÓN STICKY MEJORADA */
-
         .nav-menu {
-
             background: rgba(10, 10, 10, 0.98);
-
             backdrop-filter: blur(20px);
-
             -webkit-backdrop-filter: blur(20px);
-
             padding: 15px 0;
-
             position: fixed;
-
             position: fixed;
-
             top: 0;
-
             z-index: 9999;
-
             border-bottom: 1px solid rgba(255, 193, 7, 0.3);
-
             width: 100%;
-
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-
         }
-
-
 
         .nav-container {
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             max-width: 1200px;
-
             margin: 0 auto;
-
             padding: 0 20px;
-
             position: relative;
-
         }
-
-
 
         .nav-logo {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 1.2rem;
-
             font-weight: 700;
-
             color: #ffc107;
-
             text-decoration: none;
-
             z-index: 10000;
-
             position: relative;
-
         }
-
-
 
         /* Botón Hamburguesa MEJORADO */
-
         .hamburger {
-
             display: none;
-
             flex-direction: column;
-
             justify-content: space-between;
-
             width: 30px;
-
             height: 25px;
-
             cursor: pointer;
-
             padding: 0;
-
             background: none;
-
             border: none;
-
             z-index: 10001;
-
             position: relative;
-
             transition: all 0.3s ease;
-
         }
-
-
 
         .hamburger:hover {
-
             transform: scale(1.1);
-
         }
-
-
 
         .hamburger:active {
-
             transform: scale(0.95);
-
         }
-
-
 
         .hamburger-line {
-
             width: 100%;
-
             height: 3px;
-
             background: #ffc107;
-
             border-radius: 2px;
-
             transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
             transform-origin: center;
-
         }
-
-
 
         .hamburger.active .hamburger-line:nth-child(1) {
-
             transform: rotate(45deg) translate(6px, 6px);
-
         }
-
-
 
         .hamburger.active .hamburger-line:nth-child(2) {
-
             opacity: 0;
-
             transform: scaleX(0);
-
         }
-
-
 
         .hamburger.active .hamburger-line:nth-child(3) {
-
             transform: rotate(-45deg) translate(6px, -6px);
-
         }
-
-
 
         /* Menú Desktop */
-
         .nav-items {
-
             display: flex;
-
             align-items: center;
-
             gap: 15px;
-
         }
-
-
 
         .nav-item {
-
             background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
-
             color: #ffc107;
-
             padding: 12px 20px;
-
             border-radius: 50px;
-
             border: 1px solid rgba(255, 193, 7, 0.3);
-
             font-weight: 600;
-
             text-decoration: none;
-
             transition: all 0.3s ease;
-
             cursor: pointer;
-
             font-size: 0.9rem;
-
             white-space: nowrap;
-
         }
-
-
 
         .nav-item:hover,
-
         .nav-item:focus {
-
             background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%);
-
             color: #000000;
-
             transform: translateY(-2px);
-
             box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
-
         }
-
-
 
         /* Menú Móvil MEJORADO */
-
         .nav-mobile {
-
             position: fixed;
-
             top: 0;
-
             right: -100%;
-
             width: 280px;
-
             height: 100vh;
-
             background: rgba(10, 10, 10, 0.98);
-
             backdrop-filter: blur(20px);
-
             -webkit-backdrop-filter: blur(20px);
-
             transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
             z-index: 9998;
-
             border-left: 1px solid rgba(255, 193, 7, 0.3);
-
             overflow-y: auto;
-
             -webkit-overflow-scrolling: touch;
-
             padding-top: 80px;
-
         }
-
-
 
         .nav-mobile.active {
-
             right: 0;
-
         }
-
-
 
         .nav-mobile-items {
-
             padding: 40px 20px;
-
             display: flex;
-
             flex-direction: column;
-
             gap: 20px;
-
         }
-
-
 
         .nav-mobile .nav-item {
-
             width: 100%;
-
             text-align: center;
-
             padding: 18px 24px;
-
             font-size: 1.1rem;
-
             border-radius: 15px;
-
             display: block;
-
             transform: translateX(50px);
-
             opacity: 0;
-
             transition: all 0.3s ease;
-
         }
-
-
 
         .nav-mobile.active .nav-item {
-
             transform: translateX(0);
-
             opacity: 1;
-
         }
-
-
 
         .nav-mobile .nav-item:nth-child(1) { transition-delay: 0.1s; }
-
         .nav-mobile .nav-item:nth-child(2) { transition-delay: 0.2s; }
-
         .nav-mobile .nav-item:nth-child(3) { transition-delay: 0.3s; }
-
         .nav-mobile .nav-item:nth-child(4) { transition-delay: 0.4s; }
-
         .nav-mobile .nav-item:nth-child(5) { transition-delay: 0.5s; }
-
         .nav-mobile .nav-item:nth-child(6) { transition-delay: 0.6s; }
-
         .nav-mobile .nav-item:nth-child(7) { transition-delay: 0.7s; }
 
-
-
         .nav-mobile .nav-item:hover,
-
         .nav-mobile .nav-item:active {
-
             transform: translateX(-5px) scale(1.05);
-
             box-shadow: 0 8px 25px rgba(255, 193, 7, 0.3);
-
         }
-
-
 
         /* Overlay para cerrar el menú */
-
         .nav-overlay {
-
             position: fixed;
-
             top: 0;
-
             left: 0;
-
             width: 100%;
-
             height: 100vh;
-
             background: rgba(0, 0, 0, 0.6);
-
             z-index: 9997;
-
             opacity: 0;
-
             visibility: hidden;
-
             transition: all 0.3s ease;
-
         }
-
-
 
         .nav-overlay.active {
-
             opacity: 1;
-
             visibility: visible;
-
         }
-
-
 
         /* Lock body scroll cuando el menú está abierto */
-
         body.menu-open {
-
             overflow: hidden;
-
             position: fixed;
-
             width: 100%;
-
         }
-
-
 
         /* SECTIONS */
-
         .section {
-
             padding: 80px 0;
-
             position: relative;
-
         }
-
         
-
         .section-bg-1 {
-
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-
         }
-
         
-
         .section-bg-2 {
-
             background: linear-gradient(135deg, #111111 0%, #0a0a0a 100%);
-
         }
-
         
-
         .section-bg-3 {
-
             background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
-
         }
-
         
-
         .section-header {
-
             text-align: center;
-
             margin-bottom: 60px;
-
         }
-
         
-
         .section-title {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 2.5rem;
-
             font-weight: 700;
-
             background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%);
-
             -webkit-background-clip: text;
-
             -webkit-text-fill-color: transparent;
-
             background-clip: text;
-
             margin-bottom: 20px;
-
         }
-
         
-
         .section-subtitle {
-
             font-size: 1.2rem;
-
             color: #cccccc;
-
             font-weight: 400;
-
         }
-
         
-
         /* CARDS */
-
         .card-grid {
-
             display: grid;
-
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
             gap: 30px;
-
             margin: 50px 0;
-
         }
-
         
-
         .card {
-
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-
             backdrop-filter: blur(10px);
-
             border-radius: 20px;
-
             padding: 40px;
-
             border: 1px solid rgba(255, 193, 7, 0.2);
-
             position: relative;
-
             overflow: hidden;
-
             transition: all 0.4s ease;
-
             cursor: pointer;
-
         }
-
         
-
         .card::before {
-
             content: '';
-
             position: absolute;
-
             top: 0;
-
             left: -100%;
-
             width: 100%;
-
             height: 100%;
-
             background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.1), transparent);
-
             transition: left 0.6s ease;
-
         }
-
         
-
         .card:hover::before {
-
             left: 100%;
-
         }
-
         
-
         .card:hover {
-
             transform: translateY(-10px);
-
             border-color: rgba(255, 193, 7, 0.5);
-
             box-shadow: 0 20px 40px rgba(255, 193, 7, 0.1);
-
         }
-
         
-
         .card-icon {
-
             font-size: 3rem;
-
             margin-bottom: 20px;
-
             display: block;
-
         }
-
         
-
         .card-title {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 1.3rem;
-
             font-weight: 700;
-
             color: #ffc107;
-
             margin-bottom: 15px;
-
         }
-
         
-
         .card-description {
-
             color: #cccccc;
-
             font-size: 1rem;
-
             line-height: 1.6;
-
         }
-
         
-
         /* AVATAR CARDS */
-
         .avatar-grid {
-
             display: grid;
-
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
             gap: 20px;
-
             margin: 50px 0;
-
         }
-
         
-
         .avatar-card {
-
             background: linear-gradient(135deg, rgba(255, 193, 7, 0.05) 0%, rgba(255, 193, 7, 0.02) 100%);
-
             backdrop-filter: blur(15px);
-
             border-radius: 20px;
-
             padding: 25px;
-
             border: 2px solid rgba(255, 193, 7, 0.3);
-
             position: relative;
-
             overflow: hidden;
-
             transition: all 0.4s ease;
-
             cursor: pointer;
-
             text-align: center;
-
             min-height: 350px;
-
         }
-
         
-
         .avatar-card:hover {
-
             transform: translateY(-10px) scale(1.02);
-
             border-color: #ffc107;
-
             box-shadow: 0 25px 50px rgba(255, 193, 7, 0.2);
-
         }
-
         
-
         .avatar-emoji {
-
             font-size: 2.5rem;
-
             margin-bottom: 15px;
-
             display: block;
-
         }
-
         
-
         .avatar-name {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 1.1rem;
-
             font-weight: 700;
-
             color: #ffc107;
-
             margin-bottom: 8px;
-
         }
-
         
-
         .avatar-title {
-
             font-size: 0.9rem;
-
             color: #cccccc;
-
             margin-bottom: 20px;
-
             font-style: italic;
-
         }
-
         
-
         .avatar-stats {
-
             list-style: none;
-
             margin: 20px 0;
-
             text-align: left;
-
         }
-
         
-
         .avatar-stats li {
-
             margin: 8px 0;
-
             padding-left: 0px;
-
             position: relative;
-
             color: #ffffff;
-
             font-size: 0.85rem;
-
         }
-
         
-
         .avatar-stats li::before {
-
             content: '▶';
-
             position: absolute;
-
             left: 0;
-
             color: #ffc107;
-
             font-size: 0.7rem;
-
         }
-
         
-
         .checkbox-container {
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             margin-top: 20px;
-
         }
-
         
-
         .custom-checkbox {
-
             width: 18px;
-
             height: 18px;
-
             margin-right: 10px;
-
             cursor: pointer;
-
             accent-color: #ffc107;
-
             transform: scale(1.2);
-
         }
-
         
-
         /* FORMS */
-
         .form-group {
-
             margin: 30px 0;
-
         }
-
         
-
         .form-label {
-
             display: block;
-
             font-weight: 600;
-
             color: #ffc107;
-
             margin-bottom: 12px;
-
             font-size: 1rem;
-
         }
-
         
-
         .form-input {
-
             width: 100%;
-
             padding: 16px 20px;
-
             background: rgba(255, 255, 255, 0.05);
-
             border: 1px solid rgba(255, 193, 7, 0.3);
-
             border-radius: 12px;
-
             color: #ffffff;
-
             font-size: 1rem;
-
             font-family: 'Inter', sans-serif;
-
             transition: all 0.3s ease;
-
             -webkit-appearance: none;
-
             appearance: none;
-
         }
-
         
-
         .form-input:focus {
-
             outline: none;
-
             border-color: #ffc107;
-
             box-shadow: 0 0 20px rgba(255, 193, 7, 0.2);
-
             background: rgba(255, 255, 255, 0.08);
-
         }
-
         
-
         .form-input::placeholder {
-
             color: #888888;
-
         }
-
         
-
         .form-textarea {
-
             min-height: 120px;
-
             resize: vertical;
-
         }
-
         
-
         /* BUTTONS */
-
         .btn-primary {
-
             background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%);
-
             border: none;
-
             padding: 18px 40px;
-
             border-radius: 50px;
-
             color: #000000;
-
             font-weight: 700;
-
             font-size: 1.1rem;
-
             cursor: pointer;
-
             transition: all 0.3s ease;
-
             box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3);
-
             position: relative;
-
             overflow: hidden;
-
             -webkit-appearance: none;
-
             appearance: none;
-
             touch-action: manipulation;
-
         }
-
         
-
         .btn-primary:hover,
-
         .btn-primary:active {
-
             transform: translateY(-3px);
-
             box-shadow: 0 15px 40px rgba(255, 193, 7, 0.4);
-
         }
-
         
-
         .btn-primary::before {
-
             content: '';
-
             position: absolute;
-
             top: 0;
-
             left: -100%;
-
             width: 100%;
-
             height: 100%;
-
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-
             transition: left 0.5s ease;
-
         }
-
         
-
         .btn-primary:hover::before {
-
             left: 100%;
-
         }
-
         
-
         /* STATS */
-
         .stats-container {
-
             display: grid;
-
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
             gap: 30px;
-
             margin: 60px 0;
-
         }
-
         
-
         .stat-card {
-
             background: linear-gradient(135deg, rgba(255, 193, 7, 0.08) 0%, rgba(255, 193, 7, 0.03) 100%);
-
             backdrop-filter: blur(15px);
-
             border-radius: 25px;
-
             padding: 50px 30px;
-
             text-align: center;
-
             border: 1px solid rgba(255, 193, 7, 0.2);
-
             position: relative;
-
             overflow: hidden;
-
             transition: all 0.3s ease;
-
         }
-
         
-
         .stat-card:hover {
-
             transform: translateY(-5px);
-
             border-color: rgba(255, 193, 7, 0.5);
-
         }
-
         
-
         .stat-number {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 3.5rem;
-
             font-weight: 800;
-
             color: #ffc107;
-
             margin-bottom: 15px;
-
             line-height: 1;
-
         }
-
         
-
         .stat-label {
-
             font-size: 1.1rem;
-
             color: #ffffff;
-
             font-weight: 600;
-
             margin-bottom: 10px;
-
         }
-
         
-
         .stat-description {
-
             color: #cccccc;
-
             font-size: 0.9rem;
-
             line-height: 1.5;
-
         }
-
         
-
         /* SESSIONS */
-
         .session-container {
-
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(26, 26, 26, 0.6) 100%);
-
             backdrop-filter: blur(20px);
-
             border-radius: 30px;
-
             padding: 60px;
-
             margin: 50px 0;
-
             border: 2px solid rgba(255, 193, 7, 0.3);
-
             position: relative;
-
             overflow: hidden;
-
         }
-
         
-
         .session-number {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 8rem;
-
             font-weight: 900;
-
             position: absolute;
-
             top: 30px;
-
             right: 40px;
-
             opacity: 0.1;
-
             color: #ffc107;
-
             line-height: 1;
-
         }
-
         
-
         .session-title {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 2.2rem;
-
             font-weight: 700;
-
             color: #ffc107;
-
             margin-bottom: 20px;
-
             position: relative;
-
             z-index: 10;
-
         }
-
         
-
         .session-subtitle {
-
             font-size: 1.2rem;
-
             color: #cccccc;
-
             margin-bottom: 40px;
-
             font-style: italic;
-
             position: relative;
-
             z-index: 10;
-
         }
-
         
-
         /* TESTIMONIALS */
-
         .testimonial-container {
-
             background: linear-gradient(135deg, rgba(255, 193, 7, 0.05) 0%, rgba(255, 193, 7, 0.02) 100%);
-
             backdrop-filter: blur(10px);
-
             border-radius: 20px;
-
             padding: 40px;
-
             margin: 40px 0;
-
             border-left: 4px solid #ffc107;
-
             position: relative;
-
         }
-
         
-
         .testimonial-text {
-
             font-size: 1.1rem;
-
             line-height: 1.7;
-
             color: #ffffff;
-
             font-style: italic;
-
             margin-bottom: 25px;
-
         }
-
         
-
         .testimonial-author {
-
             font-weight: 700;
-
             color: #ffc107;
-
             font-size: 1.1rem;
-
         }
-
         
-
         .testimonial-role {
-
             color: #cccccc;
-
             font-size: 0.9rem;
-
             margin-top: 5px;
-
         }
-
         
-
         /* SPECIAL SECTIONS */
-
         .special-section {
-
             background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
-
             backdrop-filter: blur(15px);
-
             border-radius: 30px;
-
             padding: 50px;
-
             margin: 50px 0;
-
             border: 2px solid rgba(255, 193, 7, 0.4);
-
             position: relative;
-
             overflow: hidden;
-
         }
-
         
-
         .special-title {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 1.8rem;
-
             color: #ffc107;
-
             text-align: center;
-
             margin-bottom: 30px;
-
             font-weight: 700;
-
         }
-
         
-
         /* FINAL CTA */
-
         .final-cta {
-
             background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 25%, #ffc107 50%, #ffab00 75%, #ffc107 100%);
-
             background-size: 400% 400%;
-
             animation: gradient-flow 6s ease-in-out infinite;
-
             padding: 100px 40px;
-
             text-align: center;
-
             position: relative;
-
             overflow: hidden;
-
         }
-
         
-
         @keyframes gradient-flow {
-
             0%, 100% { background-position: 0% 50%; }
-
             50% { background-position: 100% 50%; }
-
         }
-
         
-
         .final-cta::before {
-
             content: '';
-
             position: absolute;
-
             top: 0;
-
             left: 0;
-
             right: 0;
-
             bottom: 0;
-
             background: rgba(0, 0, 0, 0.8);
-
             z-index: 1;
-
         }
-
         
-
         .final-cta-content {
-
             position: relative;
-
             z-index: 10;
-
         }
-
         
-
         .final-title {
-
             font-family: 'JetBrains Mono', monospace;
-
             font-size: 3rem;
-
             font-weight: 900;
-
             color: #ffffff;
-
             margin-bottom: 30px;
-
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-
         }
-
         
-
         .final-subtitle {
-
             font-size: 1.4rem;
-
             color: #ffffff;
-
             margin-bottom: 50px;
-
             font-weight: 400;
-
         }
-
         
-
         .contact-grid {
-
             display: grid;
-
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
             gap: 30px;
-
             margin: 60px 0;
-
         }
-
         
-
         .contact-card {
-
             background: rgba(0, 0, 0, 0.7);
-
             backdrop-filter: blur(15px);
-
             border-radius: 20px;
-
             padding: 40px 30px;
-
             border: 1px solid rgba(255, 193, 7, 0.3);
-
             transition: all 0.3s ease;
-
         }
-
         
-
         .contact-card:hover {
-
             transform: translateY(-10px);
-
             border-color: #ffc107;
-
             box-shadow: 0 20px 40px rgba(255, 193, 7, 0.2);
-
         }
-
         
-
         .contact-icon {
-
             font-size: 3rem;
-
             margin-bottom: 20px;
-
             color: #ffc107;
-
         }
-
         
-
         .contact-title {
-
             font-size: 1.3rem;
-
             font-weight: 700;
-
             color: #ffffff;
-
             margin-bottom: 10px;
-
         }
-
         
-
         .contact-info {
-
             font-size: 1.1rem;
-
             color: #ffc107;
-
             font-weight: 600;
-
         }
-
         
-
         .contact-description {
-
             color: #cccccc;
-
             font-size: 0.9rem;
-
             margin-top: 8px;
-
         }
-
         
-
         /* GRID LAYOUTS */
-
         .two-column {
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 30px;
-
         }
-
         
-
         .three-column {
-
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 30px;
-
         }
-
         
-
         /* TABLE STYLES */
-
         .comparison-table {
-
             background: rgba(0, 0, 0, 0.5);
-
             border-radius: 15px;
-
             overflow: hidden;
-
             margin: 40px 0;
-
             border: 1px solid rgba(255, 193, 7, 0.3);
-
         }
-
         
-
         .table-header {
-
             background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%);
-
             color: #000000;
-
             padding: 20px;
-
             text-align: center;
-
             font-weight: 700;
-
             font-size: 1.2rem;
-
         }
-
         
-
         .comparison-table table {
-
             width: 100%;
-
             border-collapse: collapse;
-
         }
-
         
-
         .comparison-table th,
-
         .comparison-table td {
-
             padding: 20px;
-
             text-align: left;
-
             border-bottom: 1px solid rgba(255, 193, 7, 0.1);
-
         }
-
         
-
         .comparison-table th {
-
             background: rgba(255, 193, 7, 0.1);
-
             color: #ffc107;
-
             font-weight: 600;
-
         }
-
         
-
         .comparison-table td input {
-
             background: transparent;
-
             border: 1px solid rgba(255, 193, 7, 0.3);
-
             color: #ffffff;
-
             padding: 10px 15px;
-
             border-radius: 8px;
-
             width: 100%;
-
             font-size: 0.9rem;
-
         }
-
         
-
         .comparison-table td input:focus {
-
             outline: none;
-
             border-color: #ffc107;
-
         }
-
-
 
         /* RESPONSIVE MOBILE FIRST */
-
         @media (max-width: 768px) {
-
             .hamburger {
-
                 display: flex;
-
             }
-
-
 
             .nav-items {
-
                 display: none;
-
             }
-
-
 
             .nav-logo {
-
                 font-size: 1rem;
-
             }
-
-
 
             .nav-mobile {
-
                 width: 100%;
-
             }
 
-
-
             .main-title { 
-
                 font-size: 2.2rem; 
-
                 line-height: 1.2;
-
                 margin-bottom: 15px;
-
             }
-
             .subtitle { 
-
                 font-size: 1.1rem; 
-
                 margin-bottom: 10px;
-
             }
-
             .tagline { 
-
                 font-size: 0.95rem; 
-
                 margin-bottom: 30px;
-
             }
-
             .hero-section { 
-
                 padding: 40px 15px; 
-
                 min-height: 80vh;
-
             }
-
             .section { 
-
                 padding: 40px 15px; 
-
             }
-
             .section-title { 
-
                 font-size: 1.8rem; 
-
                 line-height: 1.3;
-
             }
-
             .section-subtitle { 
-
                 font-size: 1rem; 
-
             }
-
             .warning-box {
-
                 padding: 25px 20px;
-
                 margin: 25px 0;
-
             }
-
             .warning-title {
-
                 font-size: 1.3rem;
-
                 margin-bottom: 15px;
-
             }
-
             .warning-text {
-
                 font-size: 1rem;
-
                 line-height: 1.5;
-
             }
-
             .session-container { 
-
                 padding: 30px 20px; 
-
                 margin: 30px 0;
-
             }
-
             .session-number { 
-
                 font-size: 4rem; 
-
                 top: 15px;
-
                 right: 20px;
-
             }
-
             .session-title { 
-
                 font-size: 1.5rem; 
-
                 margin-bottom: 15px;
-
             }
-
             .session-subtitle {
-
                 font-size: 1rem;
-
                 margin-bottom: 25px;
-
             }
-
             .final-title { 
-
                 font-size: 2rem; 
-
                 line-height: 1.2;
-
             }
-
             .final-subtitle {
-
                 font-size: 1.1rem;
-
                 margin-bottom: 30px;
-
             }
-
             .stats-container { 
-
                 grid-template-columns: repeat(2, 1fr); 
-
                 gap: 20px;
-
             }
-
             .stat-card {
-
                 padding: 30px 20px;
-
             }
-
             .stat-number {
-
                 font-size: 2.5rem;
-
             }
-
             .stat-label {
-
                 font-size: 1rem;
-
             }
-
             .testimonial-container {
-
                 padding: 25px 20px;
-
                 margin: 25px 0;
-
             }
-
             .testimonial-text {
-
                 font-size: 1rem;
-
                 line-height: 1.6;
-
             }
-
             .card {
-
                 padding: 25px 20px;
-
             }
-
             .card-title {
-
                 font-size: 1.1rem;
-
             }
-
             .card-description {
-
                 font-size: 0.9rem;
-
             }
-
             .special-section {
-
                 padding: 30px 20px;
-
                 margin: 30px 0;
-
             }
-
             .special-title {
-
                 font-size: 1.4rem;
-
                 margin-bottom: 20px;
-
             }
-
             .form-input {
-
                 padding: 12px 16px;
-
                 font-size: 1rem;
-
             }
-
             .form-label {
-
                 font-size: 1rem;
-
                 margin-bottom: 8px;
-
             }
-
             .btn-primary {
-
                 padding: 15px 25px;
-
                 font-size: 1rem;
-
                 width: 100%;
-
                 margin: 20px 0;
-
             }
-
             .contact-grid {
-
                 grid-template-columns: 1fr;
-
                 gap: 20px;
-
             }
-
             .contact-card {
-
                 padding: 25px 20px;
-
             }
-
             .final-cta {
-
                 padding: 60px 20px;
-
             }
-
             .two-column { grid-template-columns: 1fr; }
-
             .three-column { grid-template-columns: 1fr; }
-
             .avatar-card {
-
                 min-height: auto;
-
                 padding: 25px 20px;
-
             }
-
             .avatar-emoji {
-
                 font-size: 2.5rem;
-
             }
-
             .avatar-name {
-
                 font-size: 1.2rem;
-
             }
-
             .avatar-title {
-
                 font-size: 0.9rem;
-
             }
-
             .avatar-stats li {
-
                 font-size: 0.85rem;
-
             }
-
         }
-
         
-
         @media (max-width: 480px) {
-
             .main-title { 
-
                 font-size: 1.8rem; 
-
             }
-
             .subtitle { 
-
                 font-size: 1rem; 
-
             }
-
             .tagline { 
-
                 font-size: 0.9rem; 
-
             }
-
             .section-title { 
-
                 font-size: 1.5rem; 
-
             }
-
             .hero-section { 
-
                 padding: 30px 10px; 
-
             }
-
             .section { 
-
                 padding: 30px 10px; 
-
             }
-
             .stats-container { 
-
                 grid-template-columns: 1fr; 
-
             }
-
             .session-number { 
-
                 font-size: 3rem; 
-
             }
-
             .session-title { 
-
                 font-size: 1.3rem; 
-
             }
+            .warning-box {
+                padding: 20px 15px;
+            }
+            .special-section {
+                padding: 25px 15px;
+            }
+            .form-input {
+                padding: 14px 16px;
+            }
+            .btn-primary {
+                padding: 18px 25px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+<style>
+/* Estilos para el logo */
+/* Estos estilos son los que estaban en el archivo original para .nav-logo y la imagen dentro de él */
+.nav-logo {
+    position: absolute !important;
+    left: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    z-index: 10000 !important; /* Asegurar que esté por encima de otros elementos */
+}
+
+.nav-logo img {
+    height: 88px; /* Altura original del logo */
+    max-height: 90px; /* Altura máxima original del logo */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+}
+
+/* Media queries para el logo en móvil */
+@media (max-width: 768px) {
+  .nav-logo {
+    left: 10px !important; /* Ajuste fino para móvil */
+    top: 60% !important; /* Ajuste fino para móvil */
+    transform: translateY(-50%) !important;
+  }
+  .nav-logo img {
+    height: 50px !important; /* Tamaño para móvil */
+    max-height: 52px !important; /* Asegurar que no exceda */
+  }
+}
+
+/* Estilos para el botón de descarga y el mensaje de advertencia */
+#descargarPDF:active {
+    background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%); /* Color al hacer click */
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.6); /* Sombra al hacer click */
+    transform: translateY(1px); /* Ligero movimiento hacia abajo */
+}
+
+.download-warning-message {
+    color: #ffc107;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.download-warning-message.show {
+    opacity: 1;
+}
+</style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- HERO SECTION -->
+<div class="hero-section">
+<div class="container">
+<div class="hero-content">
+<div class="logo-section"></div>
+<div class="warning-box">
+<div class="warning-title">⚠️ ADVERTENCIA IMPORTANTE ⚠️</div>
+<div class="warning-text">
+                        Este NO es un workbook convencional. Es una <strong>HERRAMIENTA DE TRANSFORMACIÓN</strong> diseñada para convertir personas con potencial en <strong>DESARROLLADORES FULLSTACK PROFESIONALES</strong>. Una vez que empiezas este proceso, tu perspectiva sobre tu futuro cambiará para siempre.
+                    </div>
+</div>
+<div style="margin-top: 50px;">
+<button class="btn-primary" onclick="scrollToSection('beneficios')">
+                        🚀 COMENZAR MI TRANSFORMACIÓN 🚀
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- NAVEGACIÓN STICKY MEJORADA -->
+<nav class="nav-menu" id="navbar">
+<div class="nav-container" style="display: flex; justify-content: center; flex-wrap: wrap;">
+    <!-- Logo reinsertado en su posición original dentro de la navegación -->
+    <a class="nav-logo" href="#inicio">
+        <img alt="Futuro Digital Logo" src="futuro_digital_logo_correcto.png"/>
+    </a>
+<!-- Menú Desktop -->
+<div class="nav-items">
+<a class="nav-item" href="#beneficios">🎯 Beneficios</a>
+<a class="nav-item" href="#avatars">🎭 Avatares</a>
+<a class="nav-item" href="#vision">🔮 Visión</a>
+<a class="nav-item" href="#diagnostico">💀 Diagnóstico</a>
+<a class="nav-item" href="#sesiones">⚡ Sesiones</a>
+<a class="nav-item" href="#stats">📊 Estadísticas</a>
+<a class="nav-item" href="#descargarPDF">🎯 Actuar</a>
+</div>
+<!-- Botón Hamburguesa MEJORADO -->
+<button aria-label="Menú" class="hamburger" id="hamburger" type="button">
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+</button>
+</div>
+<!-- Menú Móvil -->
+<div class="nav-mobile" id="navMobile">
+<div class="nav-mobile-items">
+<a class="nav-item" href="#beneficios">🎯 Beneficios</a>
+<a class="nav-item" href="#avatars">🎭 Avatares</a>
+<a class="nav-item" href="#vision">🔮 Visión</a>
+<a class="nav-item" href="#diagnostico">💀 Diagnóstico</a>
+<a class="nav-item" href="#sesiones">⚡ Sesiones</a>
+<a class="nav-item" href="#stats">📊 Estadísticas</a>
+<a class="nav-item" href="#descargarPDF">🎯 Actuar</a>
+</div>
+</div>
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+</nav>
+<!-- BENEFICIOS -->
+<div class="section section-bg-1" id="beneficios">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">🎯 ESTO ES LO QUE VAS A LOGRAR</h2>
+<p class="section-subtitle">Tu nueva realidad como desarrollador FullStack</p>
+</div>
+<div class="card-grid">
+<div class="card">
+<div class="card-icon">💰</div>
+<div class="card-title">INGRESOS</div>
+<div class="card-description">
+<strong>$15,000 - $50,000 MXN mensuales</strong><br/>
+                        Trabajando desde cualquier lugar
+                    </div>
+</div>
+<div class="card">
+<div class="card-icon">🌍</div>
+<div class="card-title">LIBERTAD</div>
+<div class="card-description">
+<strong>Libertad geográfica total</strong><br/>
+                        Trabaja para empresas de todo el mundo
+                    </div>
+</div>
+<div class="card">
+<div class="card-icon">🧠</div>
+<div class="card-title">HABILIDADES</div>
+<div class="card-description">
+<strong>Habilidades del futuro, pero reales</strong><br/>
+    🧩 Pensamiento lógico-matemático<br/>
+    🫱🏽‍🫲🏿 Habilidades sociales y de comunicación<br/>
+    🎤 Seguridad al hablar en público<br/>
+    💬 Manejo de tecnicismos del mundo tech<br/>
+    Aprende a resolver problemas reales con lógica, creatividad y claridad.
+  </div>
+</div>
+<div class="card">
+<div class="card-icon">🏆</div>
+<div class="card-title">RECONOCIMIENTO</div>
+<div class="card-description">
+<strong>Sé leyenda en tu círculo</strong><br/>
+    🎓 El primero en tu familia en programar<br/>
+    💖 El que puede crear una web para su emprendimiento<br/>
+    🎁 El que programa algo especial para su pareja o amigos<br/>
+    Lo que sabes hacer empieza a hablar por ti.
+  </div>
+</div>
+</div>
+</div>
+</div>
+<!-- AVATARES -->
+<div class="section section-bg-2" id="avatars">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">🎭 ELIGE TU AVATAR DIGITAL</h2>
+<p class="section-subtitle">Cada transformación tiene un punto de partida. ¿Cuál es el tuyo?</p>
+</div>
+<div class="avatar-grid">
+<div class="avatar-card">
+<span class="avatar-emoji">🔥</span>
+<h3 class="avatar-name">KEVIN "EL DECIDIDO"</h3>
+<p class="avatar-title">23 años • Busca Independencia Profesional</p>
+<ul class="avatar-stats">
+<li><strong>Fortaleza:</strong> Ambición y determinación</li>
+<li><strong>Objetivo:</strong> Ganar $15K+ y ser independiente</li>
+<li><strong>Desafío:</strong> Falta de dirección clara</li>
+<li><strong>Motivación:</strong> "Quiero construir mi futuro"</li>
+</ul>
+<div class="checkbox-container">
+<input class="custom-checkbox" id="kevin" type="checkbox"/>
+<label for="kevin" style="color: #ffc107; font-weight: 600;">Soy Kevin</label>
+</div>
+</div>
+<div class="avatar-card">
+<span class="avatar-emoji">⚔️</span>
+<h3 class="avatar-name">LUIS "EL PERSISTENTE"</h3>
+<p class="avatar-title">28 años • Con Experiencia Previa</p>
+<ul class="avatar-stats">
+<li><strong>Fortaleza:</strong> Experiencia en aprendizaje</li>
+<li><strong>Objetivo:</strong> Convertir habilidades en ingresos</li>
+<li><strong>Desafío:</strong> Resultados inconsistentes</li>
+<li><strong>Motivación:</strong> "Esta vez será diferente"</li>
+</ul>
+<div class="checkbox-container">
+<input class="custom-checkbox" id="luis" type="checkbox"/>
+<label for="luis" style="color: #ffc107; font-weight: 600;">Soy Luis</label>
+</div>
+</div>
+<div class="avatar-card">
+<span class="avatar-emoji">👑</span>
+<h3 class="avatar-name">JAVIER "EL ESTRATEGA"</h3>
+<p class="avatar-title">35 años • Profesional Experimentado</p>
+<ul class="avatar-stats">
+<li><strong>Fortaleza:</strong> Disciplina y experiencia laboral</li>
+<li><strong>Objetivo:</strong> Cambio de carrera antes de los 40</li>
+<li><strong>Desafío:</strong> Resistencia al cambio</li>
+<li><strong>Motivación:</strong> "Es mi momento decisivo"</li>
+</ul>
+<div class="checkbox-container">
+<input class="custom-checkbox" id="javier" type="checkbox"/>
+<label for="javier" style="color: #ffc107; font-weight: 600;">Soy Javier</label>
+</div>
+</div>
+<div class="avatar-card">
+<span class="avatar-emoji">🎨</span>
+<h3 class="avatar-name">PAOLA "LA VISIONARIA"</h3>
+<p class="avatar-title">22 años • Perfil Creativo-Digital</p>
+<ul class="avatar-stats">
+<li><strong>Fortaleza:</strong> Creatividad digital natural</li>
+<li><strong>Objetivo:</strong> Crear su propio camino profesional</li>
+<li><strong>Desafío:</strong> Presión por opciones tradicionales</li>
+<li><strong>Motivación:</strong> "Voy a innovar mi futuro"</li>
+</ul>
+<div class="checkbox-container">
+<input class="custom-checkbox" id="paola" type="checkbox"/>
+<label for="paola" style="color: #ffc107; font-weight: 600;">Soy Paola</label>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">🏆 MI AVATAR ELEGIDO:</label>
+<input class="form-input" placeholder="Escribe aquí el nombre de tu avatar digital..." type="text"/>
+</div>
+</div>
+</div>
+<!-- VISIÓN DEL FUTURO -->
+<div class="section section-bg-3" id="vision">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">🔮 MÁQUINA DEL TIEMPO ACTIVADA</h2>
+<p class="section-subtitle">Destino: 15 de Enero de 2026 • Tu nueva realidad como FullStack Developer</p>
+</div>
+<div class="special-section">
+<h3 class="special-title">⏰ HAS VIAJADO 12 MESES AL FUTURO ⏰</h3>
+<div class="form-group">
+<label class="form-label">🌅 ¿Dónde despiertas en tu nueva vida?</label>
+<textarea class="form-input form-textarea" placeholder="Describe tu nuevo hogar, tu habitación, la vista desde tu ventana..."></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">☕ ¿Cuál es tu nueva rutina matutina de libertad?</label>
+<textarea class="form-input form-textarea" placeholder="Ya no tienes jefe ni horarios... ¿Cómo empiezas tu día?"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">💻 ¿En qué proyecto épico estás trabajando?</label>
+<textarea class="form-input form-textarea" placeholder="¿Qué aplicación, web o sistema estás desarrollando?"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">💰 Tu salario mensual como FullStack Developer:</label>
+<input class="form-input" placeholder="$_____ MXN mensuales" style="font-size: 1.2em; text-align: center; font-weight: bold;" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">👨‍👩‍👧‍👦 ¿Cómo reacciona tu familia a tu transformación?</label>
+<textarea class="form-input form-textarea" placeholder="¿Qué te dicen? ¿Cómo te ven ahora?"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">🎁 ¿Qué fue lo primero que compraste con tu nuevo salario?</label>
+<textarea class="form-input form-textarea" placeholder="Esa compra especial que simboliza tu nueva vida..."></textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- DIAGNÓSTICO BRUTAL -->
+<div class="section section-bg-1" id="diagnostico">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">💀 DIAGNÓSTICO BRUTAL</h2>
+<p class="section-subtitle">La cruda realidad de tu situación actual (sin filtros)</p>
+</div>
+<div class="special-section">
+<div style="background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%); color: #000; padding: 20px; border-radius: 15px; text-align: center; font-weight: 700; margin-bottom: 40px;">
+                    ⚠️ ZONA DE HONESTIDAD BRUTAL - Es hora de ser 100% real contigo mismo
+                </div>
+<div class="two-column">
+<div class="form-group">
+<label class="form-label">💼 ¿En qué trabajas actualmente?</label>
+<input class="form-input" placeholder="Mi trabajo actual es..." type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">💸 ¿Cuánto ganas al mes? (sin mentiras)</label>
+<input class="form-input" placeholder="$_____ MXN" type="text"/>
+</div>
+</div>
+<div class="two-column">
+<div class="form-group">
+<label class="form-label">📚 Del 1 al 10, ¿cuánto sabes de programación?</label>
+<input class="form-input" max="10" min="1" placeholder="___/10" type="number"/>
+</div>
+<div class="form-group">
+<label class="form-label">⏰ ¿Cuántas horas REALES tienes libres al día?</label>
+<input class="form-input" placeholder="___ horas" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">🏠 ¿Cuál es tu situación de vivienda actual?</label>
+<input class="form-input" placeholder="Vivo en... (con padres, solo, pareja, etc.)" type="text"/>
+</div>
+<div style="background: rgba(255, 193, 7, 0.05); border-radius: 20px; padding: 40px; margin: 40px 0; border: 1px solid rgba(255, 193, 7, 0.2);">
+<h4 style="color: #ffc107; margin-bottom: 30px; text-align: center; font-size: 1.3em;">💔 ANÁLISIS PROFUNDO (La honestidad es clave para el cambio)</h4>
+<div class="form-group">
+<label class="form-label">😤 ¿Qué es lo que MÁS te frustra de tu vida actual?</label>
+<textarea class="form-input form-textarea" placeholder="Sé brutalmente honesto... ¿Qué te tiene harto?"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">😱 ¿Cuál es tu PEOR pesadilla sobre tu futuro?</label>
+<textarea class="form-input form-textarea" placeholder="Si nada cambia... ¿Qué es lo peor que podría pasar?"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">💀 Si en 2 años sigues exactamente igual... ¿Cómo te sentirías?</label>
+<textarea class="form-input form-textarea" placeholder="Imagina que absolutamente nada cambia en tu vida..."></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">🔥 ¿Qué te haría sentir VERDADERAMENTE orgulloso de ti mismo?</label>
+<textarea class="form-input form-textarea" placeholder="Tu mayor aspiración... ¿Qué te llenaría de orgullo?"></textarea>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ESTADÍSTICAS -->
+<div class="section section-bg-2" id="stats">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">📊 ESTADÍSTICAS QUE IMPACTAN</h2>
+<p class="section-subtitle">Los números no mienten: Esta es tu oportunidad dorada</p>
+</div>
+<div class="stats-container">
+<div class="stat-card">
+<div class="stat-number">95%</div>
+<div class="stat-label">EMPLEABILIDAD</div>
+<div class="stat-description">De nuestros egresados consiguen trabajo como FullStack</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">$25K</div>
+<div class="stat-label">SALARIO PROMEDIO</div>
+<div class="stat-description">MXN mensuales de nuestros desarrolladores</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">6</div>
+<div class="stat-label">MESES PROMEDIO</div>
+<div class="stat-description">Para conseguir su primer empleo tech</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">∞</div>
+<div class="stat-label">POTENCIAL</div>
+<div class="stat-description">Las oportunidades en tech no tienen límite</div>
+</div>
+</div>
+<!-- Testimonios -->
+<div style="margin-top: 80px;">
+<h3 style="text-align: center; color: #ffc107; font-size: 2rem; margin-bottom: 50px; font-family: 'JetBrains Mono', monospace;">🏆 HISTORIAS DE TRANSFORMACIÓN REAL</h3>
+<div class="testimonial-container">
+<div class="testimonial-text">
+                        "Nunca imaginé que yo, sin experiencia alguna en programación, pudiera crear algo desde cero. Estudié Administración de empresas de entretenimiento y comunicación, y buscaba solo complementar mi formación... pero en Futuro Digital encontré mucho más. Hoy tengo mi propia página web para mi emprendimiento. Aprendí, me sentí acompañada, y lo logré. No sabes lo que significa para mí poder decir eso con orgullo."
+                    </div>
+<div class="testimonial-author">— Abigail Salinas Peña</div>
+<div class="testimonial-role">Estudiante de Administración de Empresas de Entretenimiento y Comunicación</div>
+</div>
+<div class="testimonial-container">
+<div class="testimonial-text">
+                        "Después de salir de la universidad, pasé meses sin encontrar trabajo. Sentía que lo que había estudiado no era suficiente, y que nadie me estaba esperando allá afuera. Futuro Digital cambió todo eso. Me dieron estructura, práctica, guía y comunidad. Hoy trabajo en tecnología, con personas que conocí en el curso y que ahora son parte de mi equipo. Encontré un lugar donde me sentí visto y preparado para avanzar."
+                    </div>
+<div class="testimonial-author">— Jorge Armando Muñoz de la Cruz</div>
+<div class="testimonial-role">Especialista en Desarrollo Backend</div>
+</div>
+<div class="testimonial-container">
+<div class="testimonial-text">
+                        "A los 24 años estaba perdido sin dirección clara. Futuro Digital no solo me enseñó programación, me dio una profesión con futuro. Ahora trabajo como freelancer para clientes internacionales y tengo la libertad que siempre busqué. Fue la mejor inversión de mi vida."
+                    </div>
+<div class="testimonial-author">— Jesús Abraham Ramírez Rodríguez</div>
+<div class="testimonial-role">Frontend Developer &amp; Freelancer</div>
+</div>
+</div>
+</div>
+</div>
+<!-- LAS 3 SESIONES -->
+<div class="section section-bg-3" id="sesiones">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">⚡ LAS 3 SESIONES LEGENDARIAS</h2>
+<p class="section-subtitle">Tu journey de transformación comienza aquí</p>
+</div>
+<!-- SESIÓN 1: DESTINO -->
+<div class="session-container">
+<div class="session-number">1</div>
+<h3 class="session-title">SESIÓN DESTINO</h3>
+<p class="session-subtitle">"¿Qué vas a lograr? El poder de la visión clara"</p>
+<div class="form-group">
+<label class="form-label">📝 Notas de la Sesión Destino:</label>
+<textarea class="form-input form-textarea" placeholder="Escribe aquí los insights más poderosos que recibiste..." style="min-height: 120px;"></textarea>
+</div>
+<div class="two-column">
+<div class="form-group">
+<label class="form-label">💡 El insight que te voló la mente:</label>
+<textarea class="form-input form-textarea" placeholder="¿Qué descubrimiento cambió tu perspectiva?"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">🔥 Lo que más te emocionó:</label>
+<textarea class="form-input form-textarea" placeholder="¿Qué te llenó de energía y esperanza?"></textarea>
+</div>
+</div>
+<div style="background: rgba(255, 193, 7, 0.08); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid rgba(255, 193, 7, 0.3);">
+<h4 style="color: #ffc107; text-align: center; margin-bottom: 25px; font-size: 1.4em; font-family: 'JetBrains Mono', monospace;">🎯 RITUAL DE COMPROMISO</h4>
+<p style="color: #cccccc; margin-bottom: 30px; font-style: italic; text-align: center;">"Los verdaderos guerreros digitales hacen juramentos sagrados..."</p>
+<div class="form-group">
+<label class="form-label">Mi nombre completo:</label>
+<input class="form-input" placeholder="Escribe tu nombre completo aquí" type="text"/>
+</div>
+<p style="color: #ffffff; margin: 30px 0; text-align: center; font-size: 1.1em;">Juro convertirme en desarrollador FullStack porque:</p>
+<div class="form-group">
+<label class="form-label">1. Mi razón más poderosa:</label>
+<input class="form-input" placeholder="La razón que te mueve más profundamente..." type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">2. Mi segunda razón:</label>
+<input class="form-input" placeholder="Otra razón fundamental..." type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">3. Mi tercera razón:</label>
+<input class="form-input" placeholder="Una razón más que te impulsa..." type="text"/>
+</div>
+<div class="two-column" style="margin-top: 30px;">
+<div class="form-group">
+<label class="form-label">📅 Fecha de mi compromiso:</label>
+<input class="form-input" type="date"/>
+</div>
+<div class="form-group">
+<label class="form-label">✍️ Tu firma digital:</label>
+<input class="form-input" placeholder="Firma aquí tu compromiso" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- SESIÓN 2: MAPA -->
+<div class="session-container">
+<div class="session-number">2</div>
+<h3 class="session-title">SESIÓN MAPA</h3>
+<p class="session-subtitle">"¿Cómo lo vas a lograr? La estrategia maestra revelada"</p>
+<div class="form-group">
+<label class="form-label">📝 Notas de la Sesión Mapa:</label>
+<textarea class="form-input form-textarea" placeholder="Anota aquí toda la metodología y estrategias que aprendiste..." style="min-height: 120px;"></textarea>
+</div>
+<div style="background: rgba(255, 193, 7, 0.08); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid rgba(255, 193, 7, 0.3);">
+<h4 style="color: #ffc107; margin-bottom: 25px; font-family: 'JetBrains Mono', monospace;">🛤️ LOS 3 PASOS MAESTROS DEL ÉXITO:</h4>
+<div class="form-group">
+<label class="form-label">1. Primer paso fundamental:</label>
+<input class="form-input" placeholder="El primer paso de tu journey..." type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">2. Segundo paso clave:</label>
+<input class="form-input" placeholder="El segundo paso crítico..." type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">3. Tercer paso definitivo:</label>
+<input class="form-input" placeholder="El paso que te lleva al éxito..." type="text"/>
+</div>
+</div>
+<div class="two-column">
+<div class="form-group">
+<label class="form-label">🤯 Lo que te sorprendió de la metodología:</label>
+<textarea class="form-input form-textarea" placeholder="¿Qué no esperabas escuchar?"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">💪 Por qué ahora tienes más confianza:</label>
+<textarea class="form-input form-textarea" placeholder="¿Qué te tranquilizó y motivó?"></textarea>
+</div>
+</div>
+<!-- Tabla de Comparación -->
+<div class="comparison-table">
+<div class="table-header">
+                        ⚔️ BATTLE ROYALE: Futuro Digital vs La Competencia
+                    </div>
+<table>
+<thead>
+<tr>
+<th>CRITERIO</th>
+<th>FUTURO DIGITAL</th>
+<th>OTROS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="color: #cccccc; font-weight: 600;">Acompañamiento Real</td>
+<td><input placeholder="Escribe aquí..." type="text"/></td>
+<td><input placeholder="Escribe aquí..." type="text"/></td>
+</tr>
+<tr>
+<td style="color: #cccccc; font-weight: 600;">Garantía de Empleo</td>
+<td><input placeholder="Escribe aquí..." type="text"/></td>
+<td><input placeholder="Escribe aquí..." type="text"/></td>
+</tr>
+<tr>
+<td style="color: #cccccc; font-weight: 600;">Valor/Precio</td>
+<td><input placeholder="Escribe aquí..." type="text"/></td>
+<td><input placeholder="Escribe aquí..." type="text"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- SESIÓN 3: VEHÍCULO -->
+<div class="session-container">
+<div class="session-number">3</div>
+<h3 class="session-title">SESIÓN VEHÍCULO</h3>
+<p class="session-subtitle">"Tu arma secreta: El programa que lo cambia todo"</p>
+<div class="form-group">
+<label class="form-label">📝 Notas de la Sesión Vehículo:</label>
+<textarea class="form-input form-textarea" placeholder="Todo lo que aprendiste sobre el programa FullStack..." style="min-height: 120px;"></textarea>
+</div>
+<!-- Calculadora de ROI -->
+<div style="background: rgba(255, 193, 7, 0.1); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid #ffc107;">
+<h4 style="color: #ffc107; text-align: center; margin-bottom: 30px; font-size: 1.4em; font-family: 'JetBrains Mono', monospace;">💰 CALCULADORA DE TRANSFORMACIÓN</h4>
+<div class="two-column">
+<div class="form-group">
+<label class="form-label">🏦 Mi inversión en el programa:</label>
+<input class="form-input" placeholder="$_____ MXN" style="font-size: 1.2em; text-align: center;" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">📈 Mis ingresos proyectados año 1:</label>
+<input class="form-input" placeholder="$_____ MXN" style="font-size: 1.2em; text-align: center;" type="text"/>
+</div>
+</div>
+<div class="two-column">
+<div class="form-group">
+<label class="form-label">🚀 Mi multiplicador de dinero:</label>
+<input class="form-input" placeholder="____x" style="text-align: center;" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">⚡ Meses para recuperar inversión:</label>
+<input class="form-input" placeholder="__ meses" style="text-align: center;" type="text"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CÓDIGO ESPECIAL -->
+<div class="section section-bg-1">
+<div class="container">
+<div style="background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%); border-radius: 30px; padding: 60px; text-align: center; margin: 60px 0; border: 4px solid #ffab00; box-shadow: 0 0 50px rgba(255, 193, 7, 0.4); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.1); z-index: 1;"></div>
+<div style="position: relative; z-index: 10;">
+<h2 style="color: #000; font-family: 'JetBrains Mono', monospace; font-size: 2.2rem; margin-bottom: 30px; font-weight: 800;">🎯 CÓDIGO DE ACCESO ESPECIAL</h2>
+<div style="background: rgba(0, 0, 0, 0.8); border-radius: 20px; padding: 40px; margin: 40px 0;">
+<h3 style="color: #ffc107; font-size: 1.6rem; margin-bottom: 25px; font-family: 'JetBrains Mono', monospace;">¡ENHORABUENA! 🎉</h3>
+<p style="color: #ffffff; font-size: 1.2rem; margin-bottom: 30px;">
+                            Has completado el workbook de transformación digital, es tu hora de inscribirte.
+                        </p>
+<h4 style="color: #ffc107; font-size: 1.3rem; margin-bottom: 25px; font-family: 'JetBrains Mono', monospace;">🎁 TUS BENEFICIOS AL INSCRIBIRTE:</h4>
+<div style="text-align: left; max-width: 600px; margin: 0 auto; color: #ffffff; font-size: 1.1rem; line-height: 1.8;">
+<p style="margin: 10px 0;">● ✅ <strong style="color: #ffc107;">ACCESO PRIORITARIO</strong> al programa FullStack</p>
+<p style="margin: 10px 0;">● ✅ <strong style="color: #ffc107;">CONTENIDO EXCLUSIVO</strong> de preparación</p>
+<p style="margin: 10px 0;">● ✅ <strong style="color: #ffc107;">CONTARÁS CON TALLERES DE INGLÉS</strong> impartidas por nativos</p>
+<p style="margin: 10px 0;">● ✅ <strong style="color: #ffc107;">COMUNIDAD VIP</strong> de futuros desarrolladores</p>
+<p style="margin: 10px 0;">● ✅ <strong style="color: #ffc107;">BONUS EXCLUSIVOS REVELADOS EN LA SESIÓN 3</strong></p>
+</div>
+</div>
+<div style="background: linear-gradient(135deg, #ff1744 0%, #ff6b35 100%); border-radius: 20px; padding: 30px; margin: 30px 0; border: 2px solid #ffffff;"><h4 style="color: #fff; margin-bottom: 20px; font-size: 1.3rem; font-family: 'JetBrains Mono', monospace;">📱 ENVÍA TU WORKBOOK A:</h4><p style="color: #ffff00; font-weight: 700; font-size: 1.5rem; text-align: center;">+52 1 55 2563 0618</p></div>
+<div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 25px; margin: 25px 0;">
+<p style="color: #ff1744; font-weight: 700; font-size: 1.3rem; font-family: 'JetBrains Mono', monospace;">
+                            ⚠️ CUPO LIMITADO ⚠️<br/>
+<span style="font-size: 1rem; font-family: 'Inter', sans-serif;">Si no actúas pronto, tu lugar puede ir a lista de espera</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="margin-top: 60px;">
+</div>
+<div style="margin-top: 60px; font-size: 1.3rem; line-height: 1.8;">
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script>
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navMobile = document.getElementById("navMobile");
+    const navOverlay = document.getElementById("navOverlay");
+    const body = document.body;
+
+    function toggleMenu() {
+        const isOpen = hamburger.classList.contains("active");
+        if (isOpen) {
+            hamburger.classList.remove("active");
+            navMobile.classList.remove("active");
+            navOverlay.classList.remove("active");
+            body.classList.remove("menu-open");
+        } else {
+            hamburger.classList.add("active");
+            navMobile.classList.add("active");
+            navOverlay.classList.add("active");
+            body.classList.add("menu-open");
+        }
+    }
+
+    function closeMenu() {
+        hamburger.classList.remove("active");
+        navMobile.classList.remove("active");
+        navOverlay.classList.remove("active");
+        body.classList.remove("menu-open");
+    }
+
+    if (hamburger) hamburger.addEventListener("click", toggleMenu);
+    if (navOverlay) navOverlay.addEventListener("click", closeMenu);
+
+    document.querySelectorAll(".nav-mobile .nav-item").forEach(link => {
+        link.addEventListener("click", () => {
+            closeMenu();
+            const targetId = link.getAttribute("href").replace("#", "");
+            scrollToSection(targetId);
+        });
+    });
+});
+
+function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+        const offset = 80;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: "smooth" });
+    }
+}
+</script><section id="descarga-final" style="text-align: center; padding: 2rem;">
+<h2 style="font-size: 1.8rem; color: #111;">📥 Tu misión inmediata</h2>
+<p style="font-size: 1.1rem;">
+    Haz clic en el botón para descargar tu workbook con tus respuestas.<br/>
+    Luego, <strong style="color:#ffcc00;">envíalo por WhatsApp al +52 1 55 2563 0618</strong> para finalizar tu registro. 💬
+  </p>
+</section><script>
+function generarYDescargarPDF() {
+  const { jsPDF } = window.jspdf;
+  const motivo = document.getElementById("motivo")?.value || "(Sin respuesta)";
+  const meta = document.getElementById("meta")?.value || "(Sin respuesta)";
+  const doc = new jsPDF();
+  doc.setFontSize(16);
+  doc.text("<img src="https://futurodigitall.github.io/WorkbookFuturoDigital/futuro_digital_logo_correcto.png" style="height: 80px;" alt="Futuro Digital" style="height: 60px;"> - MI WORKBOOK", 20, 20);
+  doc.setFontSize(12);
+  doc.text("¿Por qué quiero entrar?:", 20, 40);
+  doc.text(motivo, 20, 50, { maxWidth: 170 });
+  doc.text("¿Cuál es mi meta?:", 20, 80);
+  doc.text(meta, 20, 90, { maxWidth: 170 });
+  doc.setFontSize(11);
+  doc.text("📲 Enviar este PDF por WhatsApp al +52 1 55 2563 0618", 20, 120);
+  doc.save("Mi_Workbook_Futuro_Digital.pdf");
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Guardar y cargar datos de LocalStorage
+    const inputs = document.querySelectorAll("input, textarea");
+
+    inputs.forEach(input => {
+        const key = input.placeholder || input.name || input.id;
+        if (!key) return;
+
+        // Cargar dato si existe
+        const storedValue = localStorage.getItem(key);
+        if (storedValue) input.value = storedValue;
+
+        // Guardar al escribir
+        input.addEventListener("input", () => {
+            localStorage.setItem(key, input.value);
+        });
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const inputs = document.querySelectorAll("input, textarea");
+    const saveNotification = document.createElement("div");
+
+    saveNotification.style.position = "fixed";
+    saveNotification.style.bottom = "20px";
+    saveNotification.style.right = "20px";
+    saveNotification.style.padding = "10px 20px";
+    saveNotification.style.background = "#ffc107";
+    saveNotification.style.color = "#000";
+    saveNotification.style.fontWeight = "700";
+    saveNotification.style.borderRadius = "10px";
+    saveNotification.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)";
+    saveNotification.style.display = "none";
+    saveNotification.innerText = "¡Tus respuestas se han guardado!";
+    document.body.appendChild(saveNotification);
+
+    function showSaveNotification() {
+        saveNotification.style.display = "block";
+        setTimeout(() => {
+            saveNotification.style.display = "none";
+        }, 1500);
+    }
+
+    inputs.forEach(input => {
+        const key = input.placeholder || input.name || input.id;
+        if (!key) return;
+
+        // Cargar dato si existe
+        const storedValue = localStorage.getItem(key);
+        if (storedValue) input.value = storedValue;
+
+        // Guardar al escribir
+        input.addEventListener("input", () => {
+            localStorage.setItem(key, input.value);
+            showSaveNotification();
+        });
+    });
+});
+</script>
+<section style="text-align: center; padding: 3rem;">
+<h2 style="font-size: 1.6rem; color: #ffc107; margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace;">
+    📥 Descarga tu Workbook con tus respuestas
+  </h2>
+<p style="color: #ccc; margin-bottom: 1.5rem;">Puedes enviarlo por WhatsApp o guardarlo como recuerdo de tu transformación.</p>
+</section>
+<div style="text-align: center; margin-top: 60px; margin-bottom: 60px;">
+    <p style="margin-top: 20px; color: #cccccc; font-size: 1rem;">
+        Se descargará un PDF con todas tus respuestas para enviar por WhatsApp
+    </p>
+    <p style="font-family: 'JetBrains Mono', monospace;"><strong>"En Futuro Digital no solo enseñamos programación..."</strong></p>
+    <p style="font-size: 1.8rem; color: #ffc107; font-weight: 700; margin: 25px 0; font-family: 'JetBrains Mono', monospace;">
+        "¡TRANSFORMAMOS PROFESIONALES!"
+    </p>
+    <p style="margin-top: 30px; font-style: italic;">
+        Tu futuro coach te está esperando 💻✨
+    </p>
+    <p style="margin-top: 25px; font-size: 1.4rem; font-family: 'JetBrains Mono', monospace; color: #ffc107;">
+        ¡Tu transformación digital comienza HOY! 🚀
+    </p>
+</div>
+<button id="descargarPDF" style="background:#ffd000; color:black; padding: 15px 25px; font-size: 18px; border:none; border-radius:10px; cursor:pointer; margin: 50px auto; display:block;">📥 Descargar PDF</button>
+<div id="downloadWarning" class="download-warning-message">
+    ⏳ Generando tu Workbook... Esto puede tardar unos segundos.
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+document.getElementById("descargarPDF").addEventListener("click", async () => {
+    const downloadWarning = document.getElementById("downloadWarning");
+    downloadWarning.classList.add("show"); // Mostrar el mensaje de advertencia
+
+    const content = document.querySelector("body");
+    const canvas = await html2canvas(content, {
+        scale: 2, // Aumenta la escala para mayor resolución
+        useCORS: true, // Importante si hay imágenes de diferentes orígenes
+        windowWidth: document.body.scrollWidth,
+        windowHeight: document.body.scrollHeight,
+        scrollY: -window.scrollY // Asegura que la captura comience desde la parte superior
+    });
+
+    const imgData = canvas.toDataURL("image/jpeg", 1.0); // Calidad 1.0 para mejor imagen
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF("p", "mm", "a4"); // 'p' para portrait, 'mm' para milímetros, 'a4' tamaño
+
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+    let position = 0;
+    let pageHeight = pdf.internal.pageSize.getHeight();
+
+    // Si el contenido cabe en una sola página
+    if (pdfHeight <= pageHeight) {
+        pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
+    } else {
+        // Si el contenido es más largo que una página, divídelo
+        while (position < pdfHeight) {
+            pdf.addImage(imgData, "JPEG", 0, -position, pdfWidth, pdfHeight);
+            position += pageHeight;
+            // Añade una nueva página si aún queda contenido por añadir
+            if (position < pdfHeight) pdf.addPage();
+        }
+    }
+
+    pdf.save("Workbook_Futuro_Digital_COMPLETO.pdf");
+    
+    // Ocultar el mensaje de advertencia después de un breve retraso
+    setTimeout(() => {
+        downloadWarning.classList.remove("show");
+    }, 3000); // Desaparece después de 3 segundos
+});
+</script></body>
+</html>
