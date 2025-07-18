@@ -1976,5 +1976,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- ================ 🔥 CAPTURA TOTAL DEL WORKBOOK ================ -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<script>
+  // 1. Configura Firebase (¡usa tus credenciales!)
+  const firebaseConfig = {
+    apiKey:  "AIzaSyA_eRZuPb_Ldvm3DofdCZNKBIYYn_DlUZM",
+    authDomain:  "futurodigital-ab753.firebaseapp.com",
+    projectId: "futurodigital-ab753",,
+    storageBucket:"futurodigital-ab753.firebasestorage.app"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  const storage = firebase.storage();
+
+  // 2. Función para guardar TODO
+  async function guardarWorkbookCompleto() {
+    // Genera un ID único para el usuario
+    const userId = document.getElementById("userEmail")?.value || "anon-" + Math.random().toString(36).substring(2, 9);
+
+    // A. Captura TODOS los campos del formulario
+    const datosFormulario = {};
+    document.querySelectorAll("input, textarea, select").forEach(campo => {
+      if (campo.type === "checkbox" || campo.type === "radio") {
+        if (campo.checked) datosFormulario[campo.id] = campo.value;
+      } else {
+        datosFormulario[campo.id] = campo.value || "";
+      }
+    });
+
+    // B. Captura screenshot del workbook (como imagen)
+    const screenshotUrl = await html2canvas(document.body).then(async canvas => {
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+      const screenshotRef = storage.ref(`screenshots/${userId}.png`);
+      await screenshotRef.put(blob);
+      return await screenshotRef.getDownloadURL();
+    });
+
+    // C. Guarda el PDF generado (si usas jsPDF)
+    let pdfUrl = "";
+    if (typeof pdf !== "undefined") { // Si existe la variable 'pdf' de jsPDF
+      const pdfBlob = await new Promise(resolve => pdf.output("blob", resolve));
+      const pdfRef = storage.ref(`workbooks/${userId}.pdf`);
+      await pdfRef.put(pdfBlob);
+      pdfUrl = await pdfRef.getDownloadURL();
+    }
+
+    // D. Guarda TODO en Firestore
+    await db.collection("workbooksCompletos").doc(userId).set({
+      ...datosFormulario,
+      screenshotUrl,
+      pdfUrl,
+      fecha: new Date().toLocaleString(),
+      userAgent: navigator.userAgent
+    });
+
+    console.log("💾🔥 ¡Workbook guardado con ÉXITO!");
+    alert("¡Toda tu información se guardó correctamente! 🌈");
+  }
+
+  // 3. Guarda automáticamente cada 5 segundos y al interactuar
+  setInterval(guardarWorkbookCompleto, 5000);
+  document.addEventListener("click", guardarWorkbookCompleto);
+  document.addEventListener("keyup", guardarWorkbookCompleto);
+</script>
+<!-- ================ FIN DEL CÓDIGO ================ -->
 </body>
 </html>
